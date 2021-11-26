@@ -1,10 +1,15 @@
 import React from "react";
-import BreadCrumb from "../../components/BreadCrumb";
+import { Link } from "react-router-dom";
+import BreadCrumb, { BreadCrumbItem } from "../../components/BreadCrumb";
+import Layout from "../../components/layout"
 
 export default function Blog() {
   return (
-    <>
-      <BreadCrumb />
+    <Layout>
+      <BreadCrumb >
+        <BreadCrumbItem to="/">Home</BreadCrumbItem>
+        <BreadCrumbItem to="#">Blog</BreadCrumbItem>
+      </BreadCrumb>
       <section className="pt-7 pb-12">
         <div className="container">
           <div className="row">
@@ -13,21 +18,21 @@ export default function Blog() {
               <h3 className="mb-7 text-center">Our Blog</h3>
               {/* Nav */}
               <nav className="nav justify-content-center mb-10">
-                <a className="nav-link active" href="#">
+                <Link className="nav-link active" to="#">
                   All
-                </a>
-                <a className="nav-link" href="#">
+                </Link>
+                <Link className="nav-link" to="#">
                   Company
-                </a>
-                <a className="nav-link" href="#">
+                </Link>
+                <Link className="nav-link" to="#">
                   Brand
-                </a>
-                <a className="nav-link" href="#">
+                </Link>
+                <Link className="nav-link" to="#">
                   Fashion
-                </a>
-                <a className="nav-link" href="#">
+                </Link>
+                <Link className="nav-link" to="#">
                   Shop
-                </a>
+                </Link>
               </nav>
             </div>
           </div>
@@ -58,12 +63,12 @@ export default function Blog() {
                     light of under.
                   </p>
                   {/* Button */}
-                  <a
+                  <Link
                     className="btn btn-link stretched-link px-0 text-reset"
-                    href="blog-post.html"
+                    to="/blog-detail"
                   >
                     Read More <i className="fe fe-arrow-right ml-2" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -275,6 +280,6 @@ export default function Blog() {
           </div>
         </div>
       </section>
-    </>
+    </Layout>
   );
 }

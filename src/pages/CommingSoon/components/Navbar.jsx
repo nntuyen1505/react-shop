@@ -1,34 +1,35 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Navbar() {
     return (
         <nav className="navbar navbar-expand navbar-dark @@classList">
         <div className="container">
           {/* Brand */}
-          <a className="navbar-brand" href="./overview.html">
+          <Link className="navbar-brand" to="/">
             Shopper.
-          </a>
+          </Link>
           {/* Nav */}
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <a className="nav-link" href="#!">
+              <Link className="nav-link" to="#!">
                 <i className="fab fa-facebook-f" />
-              </a>
+              </Link>
             </li>
             <li className="nav-item ml-n4">
-              <a className="nav-link" href="#!">
+              <Link className="nav-link" to="#!">
                 <i className="fab fa-twitter" />
-              </a>
+              </Link>
             </li>
             <li className="nav-item ml-n4">
-              <a className="nav-link" href="#!">
+              <Link className="nav-link" to="#!">
                 <i className="fab fa-instagram" />
-              </a>
+              </Link>
             </li>
             <li className="nav-item ml-n4">
-              <a className="nav-link" href="#!">
+              <Link className="nav-link" to="#!">
                 <i className="fab fa-medium" />
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

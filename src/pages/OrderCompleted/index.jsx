@@ -1,7 +1,9 @@
 import React from 'react'
+import Layout from '../../components/layout'
 
 export default function OrderCompleted() {
     return (
+      <Layout>
         <section className="py-12">
         <div className="container">
           <div className="row justify-content-center">
@@ -24,5 +26,6 @@ export default function OrderCompleted() {
           </div>
         </div>
       </section>
+      </Layout>
     )
 }

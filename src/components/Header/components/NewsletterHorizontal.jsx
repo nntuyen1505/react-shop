@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function NewsletterHorizontal() {
+export function NewsletterHorizontal() {
     return (
         <div className="modal fade" id="modalNewsletterHorizontal" tabIndex={-1} role="dialog" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered modal-lg" role="document">

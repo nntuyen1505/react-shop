@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-export default function SlideBar() {
+export function SlideBar() {
     return (
         <div className="modal fixed-right fade" id="modalSidebar" tabIndex={-1} role="dialog" aria-hidden="true">
         <div className="modal-dialog modal-dialog-vertical" role="document">
@@ -15,44 +16,44 @@ export default function SlideBar() {
               <ul className="nav nav-vertical nav-unstyled font-size-h2" id="sidebarNav">
                 <li className="nav-item">
                   {/* Toggle */}
-                  <a className="nav-link dropdown-toggle" data-toggle="collapse" href="#sidebarHome">
+                  <Link className="nav-link dropdown-toggle" data-toggle="collapse" to="#sidebarHome">
                     Home
-                  </a>
+                  </Link>
                   {/* Collapse */}
                   <div className="collapse" id="sidebarHome" data-parent="#sidebarNav">
                     <ul className="list-styled font-size-lg py-3 mb-0">
                       <li className="list-styled-item">
-                        <a className="list-styled-link" href="./index.html">Default</a>
+                        <Link className="list-styled-link" to="./index.html">Default</Link>
                       </li>
                       <li className="list-styled-item">
-                        <a className="list-styled-link" href="./index-classic.html">Classic</a>
+                        <Link className="list-styled-link" to="./index-classic.html">Classic</Link>
                       </li>
                       <li className="list-styled-item">
-                        <a className="list-styled-link" href="./index-fashion.html">Fashion</a>
+                        <Link className="list-styled-link" to="./index-fashion.html">Fashion</Link>
                       </li>
                       <li className="list-styled-item">
-                        <a className="list-styled-link" href="./index-boxed.html">Boxed</a>
+                        <Link className="list-styled-link" to="./index-boxed.html">Boxed</Link>
                       </li>
                       <li className="list-styled-item">
-                        <a className="list-styled-link" href="./index-simple.html">Simple</a>
+                        <Link className="list-styled-link" to="./index-simple.html">Simple</Link>
                       </li>
                       <li className="list-styled-item">
-                        <a className="list-styled-link" href="./index-asymmetric.html">Asymmetric</a>
+                        <Link className="list-styled-link" to="./index-asymmetric.html">Asymmetric</Link>
                       </li>
                       <li className="list-styled-item">
-                        <a className="list-styled-link" href="./index-sidenav.html">Sidenav</a>
+                        <Link className="list-styled-link" to="./index-sidenav.html">Sidenav</Link>
                       </li>
                       <li className="list-styled-item">
-                        <a className="list-styled-link" href="./index-landing.html">Landing</a>
+                        <Link className="list-styled-link" to="./index-landing.html">Landing</Link>
                       </li>
                     </ul>
                   </div>
                 </li>
                 <li className="nav-item">
                   {/* Toggle */}
-                  <a className="nav-link dropdown-toggle" data-toggle="collapse" href="#sidebarCatalog">
+                  <Link className="nav-link dropdown-toggle" data-toggle="collapse" to="#sidebarCatalog">
                     Catalog
-                  </a>
+                  </Link>
                   {/* Collapse */}
                   <div className="collapse" id="sidebarCatalog" data-parent="#sidebarNav">
                     <div className="row">
@@ -62,31 +63,31 @@ export default function SlideBar() {
                         {/* Links */}
                         <ul className="list-styled font-size-lg py-3">
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">All Clothing</a>
+                            <Link className="list-styled-link" to="./shop.html">All Clothing</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">Blouses &amp; Shirts</a>
+                            <Link className="list-styled-link" to="./shop.html">Blouses &amp; Shirts</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">Coats &amp; Jackets</a>
+                            <Link className="list-styled-link" to="./shop.html">Coats &amp; Jackets</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">Dresses</a>
+                            <Link className="list-styled-link" to="./shop.html">Dresses</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">Hoodies &amp; Sweats</a>
+                            <Link className="list-styled-link" to="./shop.html">Hoodies &amp; Sweats</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">Denim</a>
+                            <Link className="list-styled-link" to="./shop.html">Denim</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">Jeans</a>
+                            <Link className="list-styled-link" to="./shop.html">Jeans</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">Jumpers &amp; Cardigans</a>
+                            <Link className="list-styled-link" to="./shop.html">Jumpers &amp; Cardigans</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">Leggings</a>
+                            <Link className="list-styled-link" to="./shop.html">Leggings</Link>
                           </li>
                         </ul>
                       </div>
@@ -96,28 +97,28 @@ export default function SlideBar() {
                         {/* Links */}
                         <ul className="list-styled font-size-lg">
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">All Shoes &amp; Boots</a>
+                            <Link className="list-styled-link" to="./shop.html">All Shoes &amp; Boots</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">Branded Shoes</a>
+                            <Link className="list-styled-link" to="./shop.html">Branded Shoes</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">Boots</a>
+                            <Link className="list-styled-link" to="./shop.html">Boots</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">Heels</a>
+                            <Link className="list-styled-link" to="./shop.html">Heels</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">Trainers</a>
+                            <Link className="list-styled-link" to="./shop.html">Trainers</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">Sandals</a>
+                            <Link className="list-styled-link" to="./shop.html">Sandals</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">Shoes</a>
+                            <Link className="list-styled-link" to="./shop.html">Shoes</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">Wide Fit Shoes</a>
+                            <Link className="list-styled-link" to="./shop.html">Wide Fit Shoes</Link>
                           </li>
                         </ul>
                       </div>
@@ -127,31 +128,31 @@ export default function SlideBar() {
                         {/* Links */}
                         <ul className="list-styled font-size-lg">
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">All Bags &amp; Accessories</a>
+                            <Link className="list-styled-link" to="./shop.html">All Bags &amp; Accessories</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">Accessories</a>
+                            <Link className="list-styled-link" to="./shop.html">Accessories</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">Bags &amp; Purses</a>
+                            <Link className="list-styled-link" to="./shop.html">Bags &amp; Purses</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">Luggage</a>
+                            <Link className="list-styled-link" to="./shop.html">Luggage</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">Belts</a>
+                            <Link className="list-styled-link" to="./shop.html">Belts</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">Hats</a>
+                            <Link className="list-styled-link" to="./shop.html">Hats</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">Hair Accessories</a>
+                            <Link className="list-styled-link" to="./shop.html">Hair Accessories</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">Jewellery</a>
+                            <Link className="list-styled-link" to="./shop.html">Jewellery</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">Travel Accessories</a>
+                            <Link className="list-styled-link" to="./shop.html">Travel Accessories</Link>
                           </li>
                         </ul>
                       </div>
@@ -160,9 +161,9 @@ export default function SlideBar() {
                 </li>
                 <li className="nav-item">
                   {/* Toggle */}
-                  <a className="nav-link dropdown-toggle" data-toggle="collapse" href="#sidebarShop">
+                  <Link className="nav-link dropdown-toggle" data-toggle="collapse" to="#sidebarShop">
                     Shop
-                  </a>
+                  </Link>
                   {/* Collapse */}
                   <div className="collapse" id="sidebarShop" data-parent="#sidebarNav">
                     <div className="row">
@@ -172,19 +173,19 @@ export default function SlideBar() {
                         {/* Links */}
                         <ul className="list-styled font-size-lg">
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop.html">Default</a>
+                            <Link className="list-styled-link" to="./shop.html">Default</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop-topbar.html">Topbar</a>
+                            <Link className="list-styled-link" to="./shop-topbar.html">Topbar</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop-collapse.html">Collapse</a>
+                            <Link className="list-styled-link" to="./shop-collapse.html">Collapse</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop-simple.html">Simple</a>
+                            <Link className="list-styled-link" to="./shop-simple.html">Simple</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shop-masonry.html">Masonry</a>
+                            <Link className="list-styled-link" to="./shop-masonry.html">Masonry</Link>
                           </li>
                         </ul>
                       </div>
@@ -194,19 +195,19 @@ export default function SlideBar() {
                         {/* Links */}
                         <ul className="list-styled font-size-lg">
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./product.html">Default</a>
+                            <Link className="list-styled-link" to="./product.html">Default</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./product-images-left.html">Images Left</a>
+                            <Link className="list-styled-link" to="./product-images-left.html">Images Left</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./product-image-grid.html">Image Grid</a>
+                            <Link className="list-styled-link" to="./product-image-grid.html">Image Grid</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./product-image-slider.html">Image Slider</a>
+                            <Link className="list-styled-link" to="./product-image-slider.html">Image Slider</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./product-images-stacked.html">Images Stacked</a>
+                            <Link className="list-styled-link" to="./product-images-stacked.html">Images Stacked</Link>
                           </li>
                         </ul>
                       </div>
@@ -216,16 +217,16 @@ export default function SlideBar() {
                         {/* Links */}
                         <ul className="list-styled font-size-lg">
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shopping-cart.html">Shopping Cart</a>
+                            <Link className="list-styled-link" to="./shopping-cart.html">Shopping Cart</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./checkout.html">Checkout</a>
+                            <Link className="list-styled-link" to="./checkout.html">Checkout</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./order-completed.html">Order Completed</a>
+                            <Link className="list-styled-link" to="./order-completed.html">Order Completed</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./shipping-and-returns.html">Shipping &amp; Returns</a>
+                            <Link className="list-styled-link" to="./shipping-and-returns.html">Shipping &amp; Returns</Link>
                           </li>
                         </ul>
                       </div>
@@ -235,34 +236,34 @@ export default function SlideBar() {
                         {/* Links */}
                         <ul className="list-styled font-size-lg">
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./account-order.html">Order</a>
+                            <Link className="list-styled-link" to="./account-order.html">Order</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./account-orders.html">Orders</a>
+                            <Link className="list-styled-link" to="./account-orders.html">Orders</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./account-wishlist.html">Wishlist</a>
+                            <Link className="list-styled-link" to="./account-wishlist.html">Wishlist</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./account-personal-info.html">Personal Info</a>
+                            <Link className="list-styled-link" to="./account-personal-info.html">Personal Info</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./account-address.html">Addresses</a>
+                            <Link className="list-styled-link" to="./account-address.html">Addresses</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./account-address-edit.html">Addresses: New</a>
+                            <Link className="list-styled-link" to="./account-address-edit.html">Addresses: New</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./account-payment.html">Payment</a>
+                            <Link className="list-styled-link" to="./account-payment.html">Payment</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./account-payment-edit.html">Payment: New</a>
+                            <Link className="list-styled-link" to="./account-payment-edit.html">Payment: New</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./account-payment-choose.html">Payment: Choose</a>
+                            <Link className="list-styled-link" to="./account-payment-choose.html">Payment: Choose</Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" href="./auth.html">Auth</a>
+                            <Link className="list-styled-link" to="./auth.html">Auth</Link>
                           </li>
                         </ul>
                       </div>
@@ -272,39 +273,39 @@ export default function SlideBar() {
                         {/* Links */}
                         <ul className="list-styled font-size-lg">
                           <li className="list-styled-item">
-                            <a className="list-styled-link" data-toggle="modal" href="#modalNewsletterHorizontal">
+                            <Link className="list-styled-link" data-toggle="modal" to="#modalNewsletterHorizontal">
                               Newsletter: Horizontal
-                            </a>
+                            </Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" data-toggle="modal" href="#modalNewsletterVertical">
+                            <Link className="list-styled-link" data-toggle="modal" to="#modalNewsletterVertical">
                               Newsletter: Vertical
-                            </a>
+                            </Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" data-toggle="modal" href="#modalProduct">
+                            <Link className="list-styled-link" data-toggle="modal" to="#modalProduct">
                               Product
-                            </a>
+                            </Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" data-toggle="modal" href="#modalSearch">
+                            <Link className="list-styled-link" data-toggle="modal" to="#modalSearch">
                               Search
-                            </a>
+                            </Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" data-toggle="modal" href="#modalShoppingCart">
+                            <Link className="list-styled-link" data-toggle="modal" to="#modalShoppingCart">
                               Shopping Cart
-                            </a>
+                            </Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" data-toggle="modal" href="#modalSizeChart">
+                            <Link className="list-styled-link" data-toggle="modal" to="#modalSizeChart">
                               Size Chart
-                            </a>
+                            </Link>
                           </li>
                           <li className="list-styled-item">
-                            <a className="list-styled-link" data-toggle="modal" href="#modalWaitList">
+                            <Link className="list-styled-link" data-toggle="modal" to="#modalWaitList">
                               Wait List
-                            </a>
+                            </Link>
                           </li>
                         </ul>
                       </div>
@@ -313,52 +314,52 @@ export default function SlideBar() {
                 </li>
                 <li className="nav-item">
                   {/* Toggle */}
-                  <a className="nav-link dropdown-toggle" data-toggle="collapse" href="#sidebarPages">
+                  <Link className="nav-link dropdown-toggle" data-toggle="collapse" to="#sidebarPages">
                     Pages
-                  </a>
+                  </Link>
                   {/* Collapse */}
                   <div className="collapse" id="sidebarPages" data-parent="#sidebarNav">
                     <ul className="list-styled font-size-lg py-3 mb-0">
                       <li className="list-styled-item">
-                        <a className="list-styled-link" href="./about.html">About</a>
+                        <Link className="list-styled-link" to="./about.html">About</Link>
                       </li>
                       <li className="list-styled-item">
-                        <a className="list-styled-link" href="./contact-us.html">Contact Us</a>
+                        <Link className="list-styled-link" to="./contact-us.html">Contact Us</Link>
                       </li>
                       <li className="list-styled-item">
-                        <a className="list-styled-link" href="./store-locator.html">Store Locator</a>
+                        <Link className="list-styled-link" to="./store-locator.html">Store Locator</Link>
                       </li>
                       <li className="list-styled-item">
-                        <a className="list-styled-link" href="./faq.html">FAQ</a>
+                        <Link className="list-styled-link" to="./faq.html">FAQ</Link>
                       </li>
                       <li className="list-styled-item">
-                        <a className="list-styled-link" href="./coming-soon.html">Coming Soon</a>
+                        <Link className="list-styled-link" to="./coming-soon.html">Coming Soon</Link>
                       </li>
                       <li className="list-styled-item">
-                        <a className="list-styled-link" href="./404.html">404</a>
+                        <Link className="list-styled-link" to="./404.html">404</Link>
                       </li>
                     </ul>
                   </div>
                 </li>
                 <li className="nav-item">
                   {/* Toggle */}
-                  <a className="nav-link dropdown-toggle" data-toggle="collapse" href="#sidebarBlog">
+                  <Link className="nav-link dropdown-toggle" data-toggle="collapse" to="#sidebarBlog">
                     Blog
-                  </a>
+                  </Link>
                   {/* Collapse */}
                   <div className="collapse" id="sidebarBlog" data-parent="#sidebarNav">
                     <ul className="list-styled font-size-lg py-3 mb-0">
                       <li className="list-styled-item">
-                        <a className="list-styled-link" href="./blog.html">Blog</a>
+                        <Link className="list-styled-link" to="./blog.html">Blog</Link>
                       </li>
                       <li className="list-styled-item">
-                        <a className="list-styled-link" href="./blog-post.html">Blog Post</a>
+                        <Link className="list-styled-link" to="./blog-post.html">Blog Post</Link>
                       </li>
                     </ul>
                   </div>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="./docs/getting-started.html">Docs</a>
+                  <Link className="nav-link" to="./docs/getting-started.html">Docs</Link>
                 </li>
               </ul>
             </div>
@@ -367,29 +368,29 @@ export default function SlideBar() {
               {/* Social links */}
               <ul className="list-inline">
                 <li className="list-inline-item">
-                  <a className="text-gray-350" href="#!">
+                  <Link className="text-gray-350" to="#!">
                     <i className="fab fa-facebook-f" />
-                  </a>
+                  </Link>
                 </li>
                 <li className="list-inline-item">
-                  <a className="text-gray-350" href="#!">
+                  <Link className="text-gray-350" to="#!">
                     <i className="fab fa-youtube" />
-                  </a>
+                  </Link>
                 </li>
                 <li className="list-inline-item">
-                  <a className="text-gray-350" href="#!">
+                  <Link className="text-gray-350" to="#!">
                     <i className="fab fa-twitter" />
-                  </a>
+                  </Link>
                 </li>
                 <li className="list-inline-item">
-                  <a className="text-gray-350" href="#!">
+                  <Link className="text-gray-350" to="#!">
                     <i className="fab fa-instagram" />
-                  </a>
+                  </Link>
                 </li>
                 <li className="list-inline-item">
-                  <a className="text-gray-350" href="#!">
+                  <Link className="text-gray-350" to="#!">
                     <i className="fab fa-medium-m" />
-                  </a>
+                  </Link>
                 </li>
               </ul>
               {/* Footer */}

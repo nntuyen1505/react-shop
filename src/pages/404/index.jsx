@@ -1,7 +1,9 @@
 import React from 'react'
+import Layout from '../../components/layout'
 
 export default function Page404() {
     return (
+      <Layout>
         <section className="py-12">
         <div className="container">
           <div className="row justify-content-center">
@@ -23,5 +25,6 @@ export default function Page404() {
           </div>
         </div>
       </section>
+      </Layout>
     )
 }

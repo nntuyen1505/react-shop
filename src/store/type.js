@@ -1,0 +1,1 @@
+export const OPEN_SEARCH_HEADER = "OPEN_SEARCH_HEADER"

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function NewsletterVertical() {
+export function NewsletterVertical() {
     return (
         <div className="modal fade" id="modalNewsletterVertical" tabIndex={-1} role="dialog" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered" role="document">

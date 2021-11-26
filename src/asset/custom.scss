@@ -1,0 +1,22 @@
+.error-class {
+    color: red;
+}
+
+.heading-xxs.text-muted {
+    color: white !important
+}
+
+.errorborder {
+    border: 1px solid red !important;
+}
+
+.loadingPage {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p {
+        font-size: 20px;
+        color: purple;
+    }
+}

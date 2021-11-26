@@ -1,9 +1,16 @@
 import React from 'react'
+import BreadCrumb, { BreadCrumbItem } from '../../components/BreadCrumb'
+import Layout from '../../components/layout'
 
-export default function index() {
+export default function BlogDetail() {
     return (
-        <div>
+        <Layout>
         {/* ARTICLE */}
+        <BreadCrumb>
+          <BreadCrumbItem to="/">Home</BreadCrumbItem>
+          <BreadCrumbItem to="/blog">Blog</BreadCrumbItem>
+          <BreadCrumbItem to="/blog2">Blog2</BreadCrumbItem>
+        </BreadCrumb>
         <article className="pt-7">
           {/* HEADER */}
           <header className="container">
@@ -279,7 +286,7 @@ export default function index() {
             </div>
           </div>
         </section>
-      </div>
+      </Layout>
 
     )
 }

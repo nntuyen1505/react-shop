@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Categories() {
     return (
@@ -10,14 +11,14 @@ export default function Categories() {
               <div className="card-body mt-auto mb-n11 py-8">
                 {/* Heading */}
                 <h1 className="mb-0 font-weight-bolder">
-                  Women
+                  SMARTPHONE
                 </h1>
               </div>
               <div className="card-body mt-auto py-8">
                 {/* Button */}
-                <a className="btn btn-white stretched-link" href="shop.html">
-                  Shop Women <i className="fe fe-arrow-right ml-2" />
-                </a>
+                <Link className="btn btn-white stretched-link" to="/shop?categories=1789">
+                  ĐIỆN THOẠI <i className="fe fe-arrow-right ml-2" />
+                </Link>
               </div>
             </div>
           </div>
@@ -27,14 +28,14 @@ export default function Categories() {
               <div className="card-body mt-auto mb-n11 py-8">
                 {/* Heading */}
                 <h1 className="mb-0 font-weight-bolder">
-                  Men
+                  LAPTOP
                 </h1>
               </div>
               <div className="card-body mt-auto py-8">
                 {/* Button */}
-                <a className="btn btn-white stretched-link" href="shop.html">
-                  Shop Men <i className="fe fe-arrow-right ml-2" />
-                </a>
+                <Link className="btn btn-white stretched-link" to="/shop?categories=1846">
+                  LAPTOP <i className="fe fe-arrow-right ml-2" />
+                </Link>
               </div>
             </div>
           </div>
@@ -44,14 +45,14 @@ export default function Categories() {
               <div className="card-body mt-auto mb-n11 py-8">
                 {/* Heading */}
                 <h1 className="mb-0 font-weight-bolder">
-                  Kids
+                 HÀNG QUỐC TẾ
                 </h1>
               </div>
               <div className="card-body mt-auto py-8">
                 {/* Button */}
-                <a className="btn btn-white stretched-link" href="shop.html">
-                  Shop Kids <i className="fe fe-arrow-right ml-2" />
-                </a>
+                <Link className="btn btn-white stretched-link" to="/shop?categories=17166">
+                HÀNG QUỐC TẾ <i className="fe fe-arrow-right ml-2" />
+                </Link>
               </div>
             </div>
           </div>

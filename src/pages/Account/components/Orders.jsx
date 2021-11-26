@@ -1,7 +1,10 @@
 import React from 'react'
+import { Link,  NavLink,  useRouteMatch } from 'react-router-dom'
 
-export default function Orders() {
+export function Orders() {
+  let {url}  = useRouteMatch()
     return (
+      
         <div className="col-12 col-md-9 col-lg-8 offset-lg-1">
         {/* Order */}
         <div className="card card-lg mb-5 border">
@@ -67,11 +70,11 @@ export default function Orders() {
                   <div className="col-3">
                     {/* Image */}
                     <div className="embed-responsive embed-responsive-1by1 bg-light">
-                      <a className="embed-responsive-item embed-responsive-item-text text-reset" href="#!">
+                      <Link className="embed-responsive-item embed-responsive-item-text text-reset" to="#!">
                         <div className="font-size-xxs font-weight-bold">
                           +2 <br /> more
                         </div>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -80,15 +83,15 @@ export default function Orders() {
                 <div className="form-row">
                   <div className="col-6">
                     {/* Button */}
-                    <a className="btn btn-sm btn-block btn-outline-dark" href="account-order.html">
+                    <NavLink className="btn btn-sm btn-block btn-outline-dark" to={`${url}/order-detail`}>
                       Order Details
-                    </a>
+                    </NavLink>
                   </div>
                   <div className="col-6">
                     {/* Button */}
-                    <a className="btn btn-sm btn-block btn-outline-dark" href="#!">
+                    <Link className="btn btn-sm btn-block btn-outline-dark" to="#!">
                       Track order
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -154,15 +157,15 @@ export default function Orders() {
                 <div className="form-row">
                   <div className="col-6">
                     {/* Button */}
-                    <a className="btn btn-sm btn-block btn-outline-dark" href="account-order.html">
+                    <Link className="btn btn-sm btn-block btn-outline-dark" to="account-order.html">
                       Order Details
-                    </a>
+                    </Link>
                   </div>
                   <div className="col-6">
                     {/* Button */}
-                    <a className="btn btn-sm btn-block btn-outline-dark" href="#!">
+                    <Link className="btn btn-sm btn-block btn-outline-dark" to="#!">
                       Track order
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -232,15 +235,15 @@ export default function Orders() {
                 <div className="form-row">
                   <div className="col-6">
                     {/* Button */}
-                    <a className="btn btn-sm btn-block btn-outline-dark" href="account-order.html">
+                    <Link className="btn btn-sm btn-block btn-outline-dark" to="account-order.html">
                       Order Details
-                    </a>
+                    </Link>
                   </div>
                   <div className="col-6">
                     {/* Button */}
-                    <a className="btn btn-sm btn-block btn-outline-dark" href="#!">
+                    <Link className="btn btn-sm btn-block btn-outline-dark" to="#!">
                       Track order
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -251,35 +254,36 @@ export default function Orders() {
         <nav className="d-flex justify-content-center justify-content-md-end mt-10">
           <ul className="pagination pagination-sm text-gray-400">
             <li className="page-item">
-              <a className="page-link page-link-arrow" href="#">
+              <Link className="page-link page-link-arrow" to="#">
                 <i className="fa fa-caret-left" />
-              </a>
+              </Link>
             </li>
             <li className="page-item active">
-              <a className="page-link" href="#">1</a>
+              <Link className="page-link" to="#">1</Link>
             </li>
             <li className="page-item">
-              <a className="page-link" href="#">2</a>
+              <Link className="page-link" to="#">2</Link>
             </li>
             <li className="page-item">
-              <a className="page-link" href="#">3</a>
+              <Link className="page-link" to="#">3</Link>
             </li>
             <li className="page-item">
-              <a className="page-link" href="#">4</a>
+              <Link className="page-link" to="#">4</Link>
             </li>
             <li className="page-item">
-              <a className="page-link" href="#">5</a>
+              <Link className="page-link" to="#">5</Link>
             </li>
             <li className="page-item">
-              <a className="page-link" href="#">6</a>
+              <Link className="page-link" to="#">6</Link>
             </li>
             <li className="page-item">
-              <a className="page-link page-link-arrow" href="#">
+              <Link className="page-link page-link-arrow" to="#">
                 <i className="fa fa-caret-right" />
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
       </div>
     )
+    
 }

@@ -1,12 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
-export default function Product() {
+export function ProductModal() {
+    
     return (
-        <div className="modal fade" id="modalProduct" tabIndex={-1} role="dialog" aria-hidden="true">
+        <div className="modal fade show"  id="modalProduct" tabIndex={-1} role="dialog" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered modal-xl" role="document">
           <div className="modal-content">
             {/* Close */}
-            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+            <button type="button" className="close" data-dismiss="modal" aria-label="Close" >
               <i className="fe fe-x" aria-hidden="true" />
             </button>
             {/* Content */}
@@ -16,9 +18,9 @@ export default function Product() {
                   {/* Image */}
                   <img className="img-fluid" src="/img/products/product-7.jpg" alt="..." />
                   {/* Button */}
-                  <a className="btn btn-sm btn-block btn-primary" href="./product.html">
+                  <Link className="btn btn-sm btn-block btn-primary" to="./product.html">
                     More Product Info <i className="fe fe-info ml-2" />
-                  </a>
+                  </Link>
                 </div>
                 <div className="col-12 col-lg-6 col-xl-7 py-9 px-md-9">
                   {/* Heading */}
@@ -121,7 +123,7 @@ export default function Product() {
                         <div className="col-12 col-lg-auto">
                           {/* Quantity */}
                           <select className="custom-select mb-2">
-                            <option value={1} selected>1</option>
+                            <option value={1} defaultValue  >1</option>
                             <option value={2}>2</option>
                             <option value={3}>3</option>
                             <option value={4}>4</option>

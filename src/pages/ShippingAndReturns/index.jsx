@@ -1,10 +1,14 @@
 import React from "react";
-import BreadCrumb from "../../components/BreadCrumb";
+import BreadCrumb, { BreadCrumbItem } from "../../components/BreadCrumb";
+import Layout from "../../components/layout";
 
 export default function ShippingAndReturns() {
   return (
-    <>
-      <BreadCrumb />
+    <Layout>
+      <BreadCrumb>
+        <BreadCrumbItem to="/">Home</BreadCrumbItem>
+        <BreadCrumbItem to="#">Shipping & Returns</BreadCrumbItem>
+      </BreadCrumb>
       <section className="pt-7 pb-12">
         <div className="container">
           <div className="row justify-content-center">
@@ -216,6 +220,6 @@ export default function ShippingAndReturns() {
           </div>
         </div>
       </section>
-    </>
+    </Layout>
   );
 }

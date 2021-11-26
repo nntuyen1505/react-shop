@@ -1,6 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-export default function NavBarTop() {
+export function NavBarTop() {
+
+
     return (
         <div className="navbar navbar-topbar navbar-expand-xl navbar-light bg-light">
         <div className="container">
@@ -10,83 +13,83 @@ export default function NavBarTop() {
           </div>
           {/* Toggler */}
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#topbarCollapse" aria-controls="topbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon" />
+            <span className="navbar-toggler-icon"/>
           </button>
           {/* Collapse */}
           <div className="collapse navbar-collapse" id="topbarCollapse">
             {/* Nav */}
             <ul className="nav nav-divided navbar-nav mr-auto">
-              <li className="nav-item dropdown">
+              <li className="nav-item dropdown ">
                 {/* Toggle */}
-                <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+                <Link className="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="true" to="#">
                   <img className="mb-1 mr-1" src="/img/flags/usa.svg" alt="..." /> United States
-                </a>
+                </Link>
                 {/* Menu */}
-                <div className="dropdown-menu minw-0">
-                  <a className="dropdown-item" href="#!">
+                <div className="dropdown-menu minw-0 ">
+                  <Link className="dropdown-item" to="#!">
                     <img className="mb-1 mr-2" src="/img/flags/usa.svg" alt="USA" />United States
-                  </a>
-                  <a className="dropdown-item" href="#!">
+                  </Link>
+                  <Link className="dropdown-item" to="#!">
                     <img className="mb-1 mr-2" src="/img/flags/canada.svg" alt="Canada" />Canada
-                  </a>
-                  <a className="dropdown-item" href="#!">
+                  </Link>
+                  <Link className="dropdown-item" to="#!">
                     <img className="mb-1 mr-2" src="/img/flags/germany.svg" alt="Germany" />Germany
-                  </a>
+                  </Link>
                 </div>
               </li>
               <li className="nav-item dropdown">
                 {/* Toggle */}
-                <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#">USD</a>
+                <Link className="nav-link dropdown-toggle" data-toggle="dropdown" to="#" >USD</Link>
                 {/* Menu */}
                 <div className="dropdown-menu minw-0">
-                  <a className="dropdown-item" href="#!">USD</a>
-                  <a className="dropdown-item" href="#!">EUR</a>
+                  <Link className="dropdown-item" to="#!">USD</Link>
+                  <Link className="dropdown-item" to="#!">EUR</Link>
                 </div>
               </li>
               <li className="nav-item dropdown">
                 {/* Toggle */}
-                <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#">English</a>
+                <Link className="nav-link dropdown-toggle" data-toggle="dropdown" to="#">English</Link>
                 {/* Menu */}
                 <div className="dropdown-menu minw-0">
-                  <a className="dropdown-item" href="#">English</a>
-                  <a className="dropdown-item" href="#">French</a>
-                  <a className="dropdown-item" href="#">German</a>
+                  <Link className="dropdown-item" to="#">English</Link>
+                  <Link className="dropdown-item" to="#">French</Link>
+                  <Link className="dropdown-item" to="#">German</Link>
                 </div>
               </li>
             </ul>
             {/* Nav */}
             <ul className="nav navbar-nav mr-8">
               <li className="nav-item">
-                <a className="nav-link" href="./shipping-and-returns.html">Shipping</a>
+                <Link className="nav-link" to="/shipping">Shipping</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="./faq.html">FAQ</a>
+                <Link className="nav-link" to="/faq">FAQ</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="./contact-us.html">Contact</a>
+                <Link className="nav-link" to="/contact">Contact</Link>
               </li>
             </ul>
             {/* Nav */}
             <ul className="nav navbar-nav flex-row">
               <li className="nav-item">
-                <a className="nav-link text-gray-350" href="#!">
+                <Link className="nav-link text-gray-350" to="#!">
                   <i className="fab fa-facebook-f" />
-                </a>
+                </Link>
               </li>
               <li className="nav-item ml-xl-n4">
-                <a className="nav-link text-gray-350" href="#!">
+                <Link className="nav-link text-gray-350" to="#!">
                   <i className="fab fa-twitter" />
-                </a>
+                </Link>
               </li>
               <li className="nav-item ml-xl-n4">
-                <a className="nav-link text-gray-350" href="#!">
+                <Link className="nav-link text-gray-350" to="#!">
                   <i className="fab fa-instagram" />
-                </a>
+                </Link>
               </li>
               <li className="nav-item ml-xl-n4">
-                <a className="nav-link text-gray-350" href="#!">
+                <Link className="nav-link text-gray-350" to="#!">
                   <i className="fab fa-medium" />
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

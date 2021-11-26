@@ -1,10 +1,14 @@
 import React from "react";
-import BreadCrumb from "../../components/BreadCrumb";
+import BreadCrumb, { BreadCrumbItem } from "../../components/BreadCrumb";
+import Layout from "../../components/layout";
 
 export default function ContactUs() {
   return (
-    <>
-      <BreadCrumb />
+    <Layout>
+      <BreadCrumb>
+      <BreadCrumbItem to="/">Home</BreadCrumbItem>
+      <BreadCrumbItem to="#">Contact Us</BreadCrumbItem>
+      </BreadCrumb>
       <section className="pt-7 pb-12">
         <div className="container">
           <div className="row">
@@ -110,6 +114,6 @@ export default function ContactUs() {
           </div>
         </div>
       </section>
-    </>
+    </Layout>
   );
 }

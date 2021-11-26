@@ -1,0 +1,859 @@
+{
+	"info": {
+		"_postman_id": "06948426-b9e5-42b5-a721-c6e1b55fa4d5",
+		"name": "CFD-Shop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Update Cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/ecommerce/v1/cart",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"ecommerce",
+								"v1",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apply Code",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/ecommerce/v1/apply_code",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"ecommerce",
+								"v1",
+								"apply_code"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/ecommerce/v1/cart",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"ecommerce",
+								"v1",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cart From User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/ecommerce/v1/cart",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"ecommerce",
+								"v1",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/ecommerce/v1/order",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"ecommerce",
+								"v1",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order Detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/ecommerce/v1/order/:id",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"ecommerce",
+								"v1",
+								"order",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/ecommerce/v1/order",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"ecommerce",
+								"v1",
+								"order"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"dmeo@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/login",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"dmeo@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/register",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let token = JSON.parse(responseBody)",
+									"pm.environment.set(\"accessToken\", token.data.accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\":\"{{refreshToken}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/elearning/v4/refresh-token",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"elearning",
+								"v4",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Update info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"abc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/update-profile",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"update-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get wish list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/ecommerce/v1/profile/wishlist",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"ecommerce",
+								"v1",
+								"profile",
+								"wishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add wish list",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\": 234\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/ecommerce/v1/profile/wishlist",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"ecommerce",
+								"v1",
+								"profile",
+								"wishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove wish list",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/ecommerce/v1/profile/wishlist/:id",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"ecommerce",
+								"v1",
+								"profile",
+								"wishlist",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Address",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/ecommerce/v1/profile/address/:id",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"ecommerce",
+								"v1",
+								"profile",
+								"address",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Address Default",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/ecommerce/v1/profile/address-default",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"ecommerce",
+								"v1",
+								"profile",
+								"address-default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Address Default",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/ecommerce/v1/profile/address-default",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"ecommerce",
+								"v1",
+								"profile",
+								"address-default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/ecommerce/v1/profile/address",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"ecommerce",
+								"v1",
+								"profile",
+								"address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Address",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/ecommerce/v1/profile/address/:id",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"ecommerce",
+								"v1",
+								"profile",
+								"address",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/ecommerce/v1/profile/payment/:id",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"ecommerce",
+								"v1",
+								"profile",
+								"payment",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Payment Default",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/ecommerce/v1/profile/payment-default",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"ecommerce",
+								"v1",
+								"profile",
+								"payment-default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get payment Default",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/ecommerce/v1/profile/payment-default",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"ecommerce",
+								"v1",
+								"profile",
+								"payment-default"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/ecommerce/v1/profile/payment",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"ecommerce",
+								"v1",
+								"profile",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove payment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/ecommerce/v1/profile/payment/:id",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"ecommerce",
+								"v1",
+								"profile",
+								"payment",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/product",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/product?slug=asdfasdf",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"product"
+							],
+							"query": [
+								{
+									"key": "slug",
+									"value": "asdfasdf"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/categories",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Page",
+			"item": [
+				{
+					"name": "Faq",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/faq",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"faq"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Contact",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/contact",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"contact"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/store",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"store"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

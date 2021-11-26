@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-export default function WishList() {
+export function WishList() {
     return (
         <div className="col-12 col-md-9 col-lg-8 offset-lg-1">
         {/* Products */}
@@ -23,7 +24,7 @@ export default function WishList() {
               </div>
               {/* Body */}
               <div className="card-body font-weight-bold text-center">
-                <a className="text-body" href="product.html">Cotton floral print Dress</a> <br />
+                <Link className="text-body" to="product.html">Cotton floral print Dress</Link> <br />
                 <span className="text-muted">$40.00</span>
               </div>
             </div>
@@ -50,7 +51,7 @@ export default function WishList() {
               </div>
               {/* Body */}
               <div className="card-body font-weight-bold text-center">
-                <a className="text-body" href="product.html">Suede cross body Bag</a> <br />
+                <Link className="text-body" to="product.html">Suede cross body Bag</Link> <br />
                 <span>
                   <span className="font-size-xs text-gray-350 text-decoration-line-through">$85.00</span>
                   <span className="text-primary">$49.00</span>
@@ -76,7 +77,7 @@ export default function WishList() {
               </div>
               {/* Body */}
               <div className="card-body font-weight-bold text-center">
-                <a className="text-reset" href="product.html">Cotton leaf print Shirt</a>
+                <Link className="text-reset" to="product.html">Cotton leaf print Shirt</Link>
                 <span className="text-muted">$65.00</span>
               </div>
             </div>
@@ -99,8 +100,8 @@ export default function WishList() {
               </div>
               {/* Body */}
               <div className="card-body font-weight-bold text-center">
-                <a className="text-body" href="product.html">Leather Sneakers</a> <br />
-                <a className="text-primary" href="#">Select Options</a>
+                <Link className="text-body" to="product.html">Leather Sneakers</Link> <br />
+                <Link className="text-primary" to="#">Select Options</Link>
               </div>
             </div>
           </div>
@@ -122,7 +123,7 @@ export default function WishList() {
               </div>
               {/* Body */}
               <div className="card-body font-weight-bold text-center">
-                <a className="text-body" href="product.html">Another fine dress</a> <br />
+                <Link className="text-body" to="product.html">Another fine dress</Link> <br />
                 <span className="text-muted">$99.00</span>
               </div>
             </div>
@@ -132,32 +133,32 @@ export default function WishList() {
         <nav className="d-flex justify-content-center justify-content-md-end">
           <ul className="pagination pagination-sm text-gray-400">
             <li className="page-item">
-              <a className="page-link page-link-arrow" href="#">
+              <Link className="page-link page-link-arrow" to="#">
                 <i className="fa fa-caret-left" />
-              </a>
+              </Link>
             </li>
             <li className="page-item active">
-              <a className="page-link" href="#">1</a>
+              <Link className="page-link" to="#">1</Link>
             </li>
             <li className="page-item">
-              <a className="page-link" href="#">2</a>
+              <Link className="page-link" to="#">2</Link>
             </li>
             <li className="page-item">
-              <a className="page-link" href="#">3</a>
+              <Link className="page-link" to="#">3</Link>
             </li>
             <li className="page-item">
-              <a className="page-link" href="#">4</a>
+              <Link className="page-link" to="#">4</Link>
             </li>
             <li className="page-item">
-              <a className="page-link" href="#">5</a>
+              <Link className="page-link" to="#">5</Link>
             </li>
             <li className="page-item">
-              <a className="page-link" href="#">6</a>
+              <Link className="page-link" to="#">6</Link>
             </li>
             <li className="page-item">
-              <a className="page-link page-link-arrow" href="#">
+              <Link className="page-link page-link-arrow" to="#">
                 <i className="fa fa-caret-right" />
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

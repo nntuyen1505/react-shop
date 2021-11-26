@@ -1,12 +1,17 @@
 import React from 'react'
+import { useAuth } from '../../hook/useAuth'
 
-export default function SizeChart() {
+export function SizeChart() {
+    let {openSizeGuide,toggleSizeGuide}=useAuth()
     return (
-        <div className="modal fade" id="modalSizeChart" tabIndex={-1} role="dialog" aria-hidden="true">
+        <div className="modal fade show" style={{display:openSizeGuide?"block":"none"}} id="modalSizeChart" tabIndex={-1} role="dialog" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
           <div className="modal-content">
             {/* Close */}
-            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+            <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={(e)=>{
+                e.preventDefault();
+                toggleSizeGuide(false)
+            }}>
               <i className="fe fe-x" aria-hidden="true" />
             </button>
             {/* Header*/}

@@ -1,5 +1,5 @@
 import React from 'react'
-import BreadCrumb from '../../components/BreadCrumb'
+import BreadCrumb, { BreadCrumbItem } from '../../components/BreadCrumb'
 import OursStory from './components/OursStory'
 import Welcome from './components/Welcome'
 import About from './components/About'
@@ -9,11 +9,15 @@ import Images from './components/Images'
 import Review from './components/Review'
 import Social from './components/Social'
 import Features from '../../components/Features'
+import Layout from '../../components/layout'
 
 export default function Abouts() {
     return (
-        <>
-            <BreadCrumb/>
+        <Layout>
+            <BreadCrumb>
+            <BreadCrumbItem to="/">Home</BreadCrumbItem>
+            <BreadCrumbItem to="#">About Us</BreadCrumbItem>
+            </BreadCrumb>
             <Welcome/>
             <OursStory/>
             <About/>
@@ -23,6 +27,6 @@ export default function Abouts() {
             <Review/>
             <Social/>
             <Features/>
-        </>
+        </Layout>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Description() {
+export default function Description({description}) {
     return (
         <section className="pt-11">
         <div className="container">
@@ -26,13 +26,7 @@ export default function Description() {
                       <div className="row">
                         <div className="col-12">
                           {/* Text */}
-                          <p className="text-gray-500">
-                            Won't herb first male seas, beast. Let upon, female upon third fifth every. Man subdue rule
-                            after years herb after
-                            form. And image may, morning. Behold in tree day sea that together cattle whose. Fifth gathering
-                            brought
-                            bearing. Abundantly creeping whose. Beginning form have void two. A whose.
-                          </p>
+                          <p className="text-gray-500" dangerouslySetInnerHTML={{ __html: description }}></p>
                         </div>
                         <div className="col-12 col-md-6">
                           {/* List */}

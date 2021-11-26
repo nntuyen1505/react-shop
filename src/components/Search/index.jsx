@@ -1,12 +1,17 @@
 import React from 'react'
+import { useAuth } from '../../hook/useAuth'
 
-export default function Search() {
+export function Search() {
+
+  let {openSearch, toggleOpenSearch} = useAuth()
+
+
     return (
-        <div className="modal fixed-right fade" id="modalSearch" tabIndex={-1} role="dialog" aria-hidden="true">
+        <div className="modal fixed-right fade show" style={{display:openSearch?"block":"none", paddingRight:"17px"}} id="modalSearch" tabIndex={-1} role="dialog" aria-hidden="true"  >
         <div className="modal-dialog modal-dialog-vertical" role="document">
-          <div className="modal-content">
+          <div className="modal-content" >
             {/* Close */}
-            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+            <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={(e)=>{e.preventDefault(); toggleOpenSearch(false)}} >
               <i className="fe fe-x" aria-hidden="true" />
             </button>
             {/* Header*/}

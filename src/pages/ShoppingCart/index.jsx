@@ -1,10 +1,11 @@
 import React from 'react'
 import BreadCrumb from '../../components/BreadCrumb'
 import Features from '../../components/Features'
+import Layout from '../../components/layout'
 
 export default function ShoppingCart() {
     return (
-        <>
+        <Layout>
             <BreadCrumb/>
             <section className="pt-7 pb-12">
         <div className="container">
@@ -145,6 +146,6 @@ export default function ShoppingCart() {
         </div>
       </section>
             <Features/>
-        </>
+        </Layout>
     )
 }

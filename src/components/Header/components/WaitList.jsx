@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-export default function WaitList() {
+export function WaitList() {
     return (
         <div className="modal fade" id="modalWaitList" tabIndex={-1} role="dialog" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered" role="document">
@@ -18,14 +19,14 @@ export default function WaitList() {
               <div className="row mb-6">
                 <div className="col-12 col-md-3">
                   {/* Image */}
-                  <a href="./product.html">
+                  <Link to="./product.html">
                     <img className="img-fluid mb-7 mb-md-0" src="/img/products/product-6.jpg" alt="..." />
-                  </a>
+                  </Link>
                 </div>
                 <div className="col-12 col-md-9">
                   {/* Label */}
                   <p>
-                    <a className="font-weight-bold text-body" href="./product.html">Cotton floral print Dress</a>
+                    <Link className="font-weight-bold text-body" to="./product.html">Cotton floral print Dress</Link>
                   </p>
                   {/* Radio */}
                   <div className="custom-control custom-control-inline custom-control-size mb-2">

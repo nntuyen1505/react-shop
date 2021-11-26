@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function BestPicks() {
     return (
@@ -11,7 +12,7 @@ export default function BestPicks() {
                 New Collection
               </h6>
               {/* Heading */}
-              <h2 className="mb-4">Best Picks 2019</h2>
+              <h2 className="mb-4">Best Picks 2021</h2>
               {/* Subheading */}
               <p className="mb-10 text-gray-500">
                 Appear, dry there darkness they're seas, dry waters thing fly midst. Beast, above fly brought Very green.
@@ -29,11 +30,11 @@ export default function BestPicks() {
                 {/* Body */}
                 <div className="card-body my-auto text-center">
                   {/* Heading */}
-                  <h4 className="mb-0">Bags Collection</h4>
+                  <h4 className="mb-0">Speaker Collection</h4>
                   {/* Link */}
-                  <a className="btn btn-link stretched-link text-reset" href="shop.html">
+                  <Link className="btn btn-link stretched-link text-reset" to="/shop">
                     Shop Now <i className="fe fe-arrow-right ml-2" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -52,11 +53,11 @@ export default function BestPicks() {
                     <span className="font-size-h4 font-weight-bold">30%</span>
                   </div>
                   {/* Heading */}
-                  <h4 className="mb-0">Printed men’s Shirts</h4>
+                  <h4 className="mb-0">SmartPhone</h4>
                   {/* Link */}
-                  <a className="btn btn-link stretched-link px-0 text-reset" href="shop.html">
+                  <Link className="btn btn-link stretched-link px-0 text-reset" to="/shop?categories=1789">
                     Shop Now <i className="fe fe-arrow-right ml-2" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -70,11 +71,11 @@ export default function BestPicks() {
                 {/* Body */}
                 <div className="card-body my-auto px-md-10 text-center text-md-left">
                   {/* Heading */}
-                  <h4 className="mb-0">Basic women’s Dresses</h4>
+                  <h4 className="mb-0">Laptop</h4>
                   {/* Link */}
-                  <a className="btn btn-link stretched-link px-0 text-reset" href="shop.html">
+                  <Link className="btn btn-link stretched-link px-0 text-reset" to="/shop?categories=1846">
                     Shop Now <i className="fe fe-arrow-right ml-2" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -88,11 +89,11 @@ export default function BestPicks() {
                 {/* Body */}
                 <div className="card-body my-auto text-center">
                   {/* Heading */}
-                  <h4 className="mb-0">Sweatshirts</h4>
+                  <h4 className="mb-0">JPL</h4>
                   {/* Link */}
-                  <a className="btn btn-link stretched-link text-reset" href="shop.html">
+                  <Link className="btn btn-link stretched-link text-reset" to="/shop">
                     Shop Now <i className="fe fe-arrow-right ml-2" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
