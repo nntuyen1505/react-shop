@@ -1,10 +1,11 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { useAuth } from "../../hook/useAuth";
 
+import { OPEN_MODAL_SIZE } from "../../store/type";
 
 export default function Footer() {
-  let { toggleSizeGuide } = useAuth();
+  const dispatch = useDispatch();
   return (
     <footer
       className="bg-dark bg-cover @@classList"
@@ -12,31 +13,6 @@ export default function Footer() {
     >
       <div className="py-12 border-bottom border-gray-700">
         <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-12 col-md-10 col-lg-8 col-xl-6">
-              {/* Heading */}
-              <h5 className="mb-7 text-center text-white">
-                Want style Ideas and Treats?
-              </h5>
-              {/* Form */}
-              <form className="mb-11">
-                <div className="form-row align-items-start">
-                  <div className="col">
-                    <input
-                      type="email"
-                      className="form-control form-control-gray-700 form-control-lg"
-                      placeholder="Enter Email *"
-                    />
-                  </div>
-                  <div className="col-auto">
-                    <button type="submit" className="btn btn-gray-500 btn-lg">
-                      Subscribe
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
           <div className="row">
             <div className="col-12 col-md-3">
               {/* Heading */}
@@ -92,17 +68,14 @@ export default function Footer() {
                     to="#"
                     onClick={(e) => {
                       e.preventDefault();
-                      toggleSizeGuide(true);
+                      dispatch({ type: OPEN_MODAL_SIZE });
                     }}
                   >
                     Size Guide
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    className="text-gray-300"
-                    to="/shipping"
-                  >
+                  <Link className="text-gray-300" to="/shipping">
                     Shipping &amp; Returns
                   </Link>
                 </li>
@@ -114,23 +87,23 @@ export default function Footer() {
               {/* Links */}
               <ul className="list-unstyled mb-7 mb-sm-0">
                 <li>
-                  <Link className="text-gray-300" to="/shop">
-                    Men's Shopping
+                  <Link className="text-gray-300" to="/shop?categories=1789&page=1&sort=real_price.-1">
+                    SmartPhone
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-gray-300" to="/shop">
-                    Women's Shopping
+                  <Link className="text-gray-300" to="/shop?categories=1846&page=1&sort=real_price.-1">
+                  Laptop - Thiết bị IT
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-gray-300" to="/shop">
-                    Kids' Shopping
+                  <Link className="text-gray-300" to="/shop?categories=1801&page=1&sort=real_price.-1">
+                  Máy Ảnh - Quay Phim
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-gray-300" to="/shop">
-                    Discounts
+                  <Link className="text-gray-300" to="/shop?categories=1975&page=1&sort=real_price.-1">
+                  Thể Thao - Dã Ngoại
                   </Link>
                 </li>
               </ul>

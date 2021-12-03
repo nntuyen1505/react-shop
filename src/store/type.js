@@ -1,1 +1,21 @@
-export const OPEN_SEARCH_HEADER = "OPEN_SEARCH_HEADER"
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const UPDATE_SUCCESS = "UPDATE_SUCCESS";
+export const LOGUP_SUCCESS = "LOGUP_SUCCESS";
+export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
+
+export const ERROR_LOGIN = "ERROR_LOGIN";
+export const ERROR_LOGUP = "ERROR_LOGUP";
+export const ERROR_UPDATE = "ERROR_UPDATE";
+
+export const PRODUCT_DETAIL = "PRODUCT_DETAIL";
+export const CATEGORIES = "CATEGORIES";
+export const PRODUCT_SHOP = "PRODUCT_SHOP";
+export const PAGINATE = "PAGINATE";
+export const ADD_TO_CART = "ADD_TO_CART";
+export const PRODUCT_MODAL = "PRODUCT_MODAL"
+
+export const OPEN_PRODUCT_MODAL = "PRODUCT_MODAL"
+export const OPEN_MODAL_CART = "OPEN_MODAL_CART";
+export const OPEN_MODAL_SEARCH = "OPEN_MODAL_SEARCH"
+export const OPEN_MODAL_SIZE = "OPEN_MODAL_SIZE"
+export const CLOSE_MODAL = "CLOSE_MODAL";

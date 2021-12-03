@@ -1,9 +1,21 @@
 import React from "react";
-import { Link, NavLink} from "react-router-dom";
-import { useAuth } from "../../../hook/useAuth";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { Link, NavLink } from "react-router-dom";
+import { OPEN_MODAL_CART, OPEN_MODAL_SEARCH } from "../../../store/type";
 
 export function NavBarBottom() {
-  let {toggleOpenSearch, toggleShoppingCart } = useAuth();
+  const { user } = useSelector((store) => store.auth);
+  const dispatch = useDispatch();
+
+  const openModalCart = () => {
+   
+    let div = document.createElement('div');
+    div.classList.add('modal-backdrop','fade','show');
+
+    document.body.appendChild(div)
+    document.querySelector("body").classList.add("modal-open");
+  };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white">
@@ -28,7 +40,7 @@ export function NavBarBottom() {
         <div className="collapse navbar-collapse" id="navbarCollapse">
           {/* Nav */}
           <ul className="navbar-nav mx-auto">
-            <li className="nav-item dropdown" >
+            <li className="nav-item dropdown">
               {/* Toggle */}
               <NavLink className="nav-link" exact to="/">
                 Home
@@ -43,7 +55,7 @@ export function NavBarBottom() {
             </li>
             <li className="nav-item dropdown">
               {/* Toggle */}
-              <a className="nav-link" data-toggle="dropdown" to="#" >
+              <a className="nav-link" data-toggle="dropdown" to="#">
                 Pages
               </a>
               {/* Menu */}
@@ -57,18 +69,12 @@ export function NavBarBottom() {
                         </Link>
                       </li>
                       <li className="list-styled-item">
-                        <Link
-                          className="list-styled-link"
-                          to="/contact"
-                        >
+                        <Link className="list-styled-link" to="/contact">
                           Contact Us
                         </Link>
                       </li>
                       <li className="list-styled-item">
-                        <Link
-                          className="list-styled-link"
-                          to="/store"
-                        >
+                        <Link className="list-styled-link" to="/store">
                           Store Locator
                         </Link>
                       </li>
@@ -78,10 +84,7 @@ export function NavBarBottom() {
                         </Link>
                       </li>
                       <li className="list-styled-item">
-                        <Link
-                          className="list-styled-link"
-                          to="/coming-soon"
-                        >
+                        <Link className="list-styled-link" to="/coming-soon">
                           Coming Soon
                         </Link>
                       </li>
@@ -92,7 +95,7 @@ export function NavBarBottom() {
             </li>
             <li className="nav-item dropdown">
               {/* Toggle */}
-              <a className="nav-link" data-toggle="dropdown" to="#" >
+              <a className="nav-link" data-toggle="dropdown" to="#">
                 Blog
               </a>
               {/* Menu */}
@@ -106,10 +109,7 @@ export function NavBarBottom() {
                         </Link>
                       </li>
                       <li className="list-styled-item">
-                        <Link
-                          className="list-styled-link"
-                          to="/blog-post"
-                        >
+                        <Link className="list-styled-link" to="/blog-post">
                           Blog Post
                         </Link>
                       </li>
@@ -131,19 +131,28 @@ export function NavBarBottom() {
                 className="nav-link"
                 data-toggle="modal"
                 to="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  toggleOpenSearch(true);
-                }}
+                onClick={(e) => (
+                  e.preventDefault(),
+                  dispatch({ type: OPEN_MODAL_SEARCH }),
+                  openModalCart()
+                )}
               >
                 <i className="fe fe-search" />
               </Link>
             </li>
+
             <li className="nav-item ml-lg-n4">
-              <Link className="nav-link" to="/auth">
-                <i className="fe fe-user" />
-              </Link>
+              {!user ? (
+                <Link className="nav-link" to="/auth">
+                  <i className="fe fe-user" />
+                </Link>
+              ) : (
+                <Link className="nav-link" to="/auth">
+                  <i className="fas fa-user-circle" />
+                </Link>
+              )}
             </li>
+
             <li className="nav-item ml-lg-n4">
               <Link className="nav-link" to="/account/account-wishlist">
                 <i className="fe fe-heart" />
@@ -156,7 +165,8 @@ export function NavBarBottom() {
                 to="#"
                 onClick={(e) => {
                   e.preventDefault();
-                  toggleShoppingCart(true)
+                  dispatch({ type: OPEN_MODAL_CART });
+                  openModalCart();
                 }}
               >
                 <span data-cart-items={2}>

@@ -1,11 +1,12 @@
 import React from "react";
 import { Redirect, Route } from "react-router";
-import { useAuth } from "../../hook/useAuth";
+import {useSelector}from "react-redux"
 
 export default function PrivateRoutte(props) {
-  let { user } = useAuth();
 
-  if (!user) return <Redirect to="/" />;
+  const {user} = useSelector((store) => store.auth)
+
+  if (!user) return <Redirect to="/auth" />;
   
 
   return <Route {...props} />;

@@ -8,8 +8,15 @@ import Reviews from "./components/Reviews";
 import Layout from "../../components/layout";
 import ProductServices from "../services/productServices";
 import { useParams } from "react-router";
+import Loading from "../../components/Loading";
+import { useDispatch, useSelector } from "react-redux";
+import { PRODUCT_DETAIL } from "../../store/type";
+import { fetchProductDetail } from "../../store/action/productAction";
 
 export default function ProductPage() {
+
+  const dispatch = useDispatch()
+  const {data, loading} = useSelector((store) => store.product)
 
   let{slug}=useParams()
 
@@ -19,35 +26,29 @@ export default function ProductPage() {
       behavior:"smooth"
     })
   }, [])
-  const[state, setState]=useState({
-    data:{},
-  })
 
   useEffect(async() => {
-
-    let dataDetail = await ProductServices.productDetail(slug)
-    // console.log(dataDetail)
-    if(dataDetail.data.length>0){
-      setState({
-        data:dataDetail.data[0]
-      })
-    }
-
+    dispatch(fetchProductDetail(slug))
   }, [slug])
+
+
+  if(loading){
+    return <Loading/>
+  }
 
   return (
     <Layout>
       <BreadCrumb>
         <BreadCrumbItem to="/">Home</BreadCrumbItem>
         <BreadCrumbItem to="/shop">Product</BreadCrumbItem>
-        <BreadCrumbItem to="#">{state.data?.name}</BreadCrumbItem>
+        <BreadCrumbItem to="#">{data?.name}</BreadCrumbItem>
       </BreadCrumb>
     {
-      console.log("page",state.data)
+      console.log("page",data)
     }
-      <Product data={state.data}/>
-      <Description description={state.data.description}/>
-      <Products />
+      <Product data={data}/>
+      <Description description={data.description}/>
+      {/* <Products /> */}
       <Reviews />
       <Features />
     </Layout>

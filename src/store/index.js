@@ -1,9 +1,16 @@
-import { createStore, combineReducers, applyMiddleware } from "redux";
-import btnHeaderReducer from "./reducer/btnHeaderReducer";
-
+import { applyMiddleware, combineReducers, createStore } from "redux"
+import authReducer from "./reducer/authReducer"
+import cartReducer from "./reducer/cartReducer";
+import productReducer from "./reducer/productReduct";
+import searchReducer from "./reducer/searchReducer";
+import sizeReducer from "./reducer/sizeReducer";
 
 const allReducer = combineReducers({
-    btnHeader: btnHeaderReducer,
+    auth: authReducer,
+    product: productReducer,
+    cart: cartReducer,
+    search: searchReducer,
+    size: sizeReducer,
 })
 
 const thunk = store => next => action => {
@@ -12,7 +19,7 @@ const thunk = store => next => action => {
     } else {
         next(action)
     }
-}
+};
 
 const store = createStore(
     allReducer,

@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { useAuth } from "../../../hook/useAuth";
+import { useDispatch, useSelector } from "react-redux";
+import AuthServices from "../../services/authServices";
+import { ERROR_LOGUP, LOGUP_SUCCESS } from "../../../store/type";
 
 const schema = yup
   .object({
@@ -22,8 +24,8 @@ const schema = yup
 
 export default function NewCustomer() {
 
-  let{logUp}=useAuth()
-  const [errorLogup,  setErrorLogup]=useState('')
+  const dispatch = useDispatch()
+  const {user, errorLogup} = useSelector((store) => store.auth)
 
 
   const {
@@ -34,11 +36,12 @@ export default function NewCustomer() {
     resolver: yupResolver(schema),
   });
   const onSubmit = async(dataFormRegister) => {
-    let res = await logUp(dataFormRegister)
-    if(res){
-      setErrorLogup(res)
-    }else if(dataFormRegister.error){
-      setErrorLogup(res.errorLogup)
+    let res = await AuthServices.register(dataFormRegister)
+    if(res.data){
+      dispatch({type:LOGUP_SUCCESS, payload: res.data })
+      alert("ĐĂNG KÝ THÀNH CÔNG!")
+    }else if(res.error){
+      dispatch({type: ERROR_LOGUP, payload: res.error})
     }
   }
 

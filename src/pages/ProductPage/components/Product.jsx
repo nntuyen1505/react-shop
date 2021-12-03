@@ -3,21 +3,10 @@ import { Link } from "react-router-dom";
 import { numberWithCommas } from "../../../utils/numberWithCommas";
 
 export default function Product({ data }) {
-  // console.log(data);
 
   let $ = window.$;
   let ref = useRef();
   let thisRef = useRef();
-
-  // const [color, setColor] = useState("Đen");
-  // const [size, setSize] = useState("7.5");
-
-  // const changeColor = (color) => {
-  //   setColor(color);
-  // };
-  // const changeSize = (size) => {
-  //   setSize(size);
-  // };
 
   useEffect(() => {
     setTimeout(() => {
@@ -93,7 +82,7 @@ export default function Product({ data }) {
                     {/* Rating */}
                     <div
                       className="rating font-size-xs text-dark"
-                      data-value={4}
+                      data-value={data?.rating_average}
                     >
                       <div className="rating-item">
                         <i className="fas fa-star" />
@@ -115,7 +104,7 @@ export default function Product({ data }) {
                       className="font-size-sm text-reset ml-2"
                       to="#reviews"
                     >
-                      Reviews (6)
+                      Reviews ({data?.review_count})
                     </Link>
                   </div>
                 </div>
@@ -144,59 +133,17 @@ export default function Product({ data }) {
 
                   {data.configurable_options &&
                     data?.configurable_options.map((e, i) => (
-                      console.log(e),
+                      // console.log(e),
                       <div className="form-group" key={i}>
                         {/* Label */}
                         <p className="mb-5">
                           {e.name}:<strong id="colorCaption">{e.values.map((element)=>(" "+element.label+ " "))}</strong>
-                        </p>
-                        {/* Radio */}
-                        {/* <div className="mb-8 ml-n1">
-                          {e.values.map(
-                            (e1, i1) => (
-                              // console.log(e1, i1),
-                              (
-                                <div
-                                  className="custom-control custom-control-inline custom-control-img"
-                                  key={i1}
-                                >
-                                  <input
-                                    type="radio"
-                                    className="custom-control-input"
-                                    id="imgRadioOne"
-                                    name="imgRadio"
-                                    data-toggle="form-caption"
-                                    data-target="#colorCaption"
-                                    defaultValue={e1.label}
-                                    defaultChecked
-                                    onClick={() =>
-                                      changeColor(console.log(e1.label))
-                                    }
-                                  />
-                                  <label
-                                    className="custom-control-label"
-                                    htmlFor="imgRadioOne"
-                                  >
-                                    <span
-                                      className="embed-responsive embed-responsive-1by1 bg-cover"
-                                      style={{
-                                        backgroundImage:
-                                          "url(/img/products/product-7.jpg)",
-                                      }}
-                                    />
-                                  </label>
-                                </div>
-                              )
-                            )
-                          )}
-                        </div> */}
+                        </p>   
                       </div>
                     ))
                   }
 
                   <div className="form-group">
-                    {/* Label */}
-                    {/* Radio */}
                     {/* Size chart */}
                     <p className="mb-8">
                       <img

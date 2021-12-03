@@ -1,3 +1,8 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
 .error-class {
     color: red;
 }
@@ -18,5 +23,30 @@
     p {
         font-size: 20px;
         color: purple;
+    }
+}
+
+.col-6.col-md-4.col-lg-3 {
+    .card.mb-7 {
+        .card-body.px-0 {
+            .font-weight-bold {
+                .text-body {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    /* line-height: 25px; */
+                    -webkit-line-clamp: 2;
+                    /* height: 75px; */
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                }
+            }
+        }
+    }
+}
+
+.d-flex.align-items-center {
+    input {
+        width: 40px;
+        height: 30px;
     }
 }

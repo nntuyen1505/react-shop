@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import Loading from "../Loading";
 import ProductItem from "../ProductItem";
+import { ProductModal } from "../ProductModal";
 
-export default function ProductList({data,loading}) {
-  // console.log(data)
+export default function ProductList({data}) {
+  // console.log("product_List",data)
+  // const [showProduct, setShowProduct] = useState({})
   return (
     <div className="row">
       {
-        data.map((item, index)=> <ProductItem {...item} key={item.id}/>)
+        data.map((item, index)=> (
+          // console.log("item",item),
+        <ProductItem 
+          item={item}  
+          // setShowProduct={setShowProduct} 
+          key={item.id}/>
+        ))
       }
-      {/* {
-        data.data1.map((e,i)=>console.log(e))
-      } */}
+      {/* <ProductModal {...showProduct}/> */}
     </div>
   );
 }

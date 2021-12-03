@@ -1,7 +1,5 @@
 import React from "react";
-import { Redirect } from "react-router";
 import Layout from "../../components/layout";
-import { useAuth } from "../../hook/useAuth";
 import NewCustomer from "./components/NewCustomer";
 import ReturningCustomer from "./components/ReturningCustomer";
 

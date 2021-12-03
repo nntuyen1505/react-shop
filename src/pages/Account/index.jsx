@@ -1,26 +1,24 @@
+import { useDispatch } from "react-redux";
+import { LOGOUT_SUCCESS } from "../../store/type";
 import BreadCrumb, { BreadCrumbItem } from "../../components/BreadCrumb";
-import {
-  Address,
-  Orders,
-  Payment,
-  PersonalInfo,
-  WishList,
-} from "./components";
+import { Address, Orders, Payment, PersonalInfo, WishList } from "./components";
 import { Route, Switch, useRouteMatch } from "react-router";
 import { NavLink } from "react-router-dom";
-import Layout from "../../components/layout";
-import { useAuth } from "../../hook/useAuth";
+import Layout from "../../components/layout";;
+
 
 export default function Account() {
 
-  let { url } = useRouteMatch();
-  let {logOut} = useAuth()
+
+  const dispatch = useDispatch()
+  let { url } = useRouteMatch();  
+
 
   return (
     <Layout>
       <BreadCrumb>
-        <BreadCrumbItem  to="/">Home</BreadCrumbItem>
-        <BreadCrumbItem  to="#">My Account</BreadCrumbItem>
+        <BreadCrumbItem to="/">Home</BreadCrumbItem>
+        <BreadCrumbItem to="#">My Account</BreadCrumbItem>
       </BreadCrumb>
       <section className="pt-7 pb-12">
         <div className="container">
@@ -42,7 +40,7 @@ export default function Account() {
                     Orders
                   </NavLink>
                   <NavLink
-                    className="list-group-item list-group-item-action dropright-toggle "                 
+                    className="list-group-item list-group-item-action dropright-toggle "
                     to={`${url}/account-wishlist`}
                   >
                     Widhlist
@@ -69,9 +67,10 @@ export default function Account() {
                   <NavLink
                     className="list-group-item list-group-item-action dropright-toggle"
                     to="/"
-                    onClick={(e)=>{
-                      e.preventDefault()
-                      logOut()
+                    onClick={(e) => {
+                      e.preventDefault();
+                      dispatch({type:LOGOUT_SUCCESS})
+
                     }}
                   >
                     Logout
@@ -82,11 +81,11 @@ export default function Account() {
             <Switch>
               {/* <Route path="/account/address-edit" exact  component={<AddressEdit />}/> */}
               <Route path={`${url}/`} exact component={PersonalInfo} />
-              <Route path={`${url}/oders`}   component={Orders} />
+              <Route path={`${url}/oders`} component={Orders} />
               {/* <Route path="/order-detail" component={Order} /> */}
-              <Route path={`${url}/account-wishlist`}  component={WishList} />
-              <Route path={`${url}/account-address`}  component={Address} />
-              <Route path={`${url}/account-payment`}  component={Payment} />
+              <Route path={`${url}/account-wishlist`} component={WishList} />
+              <Route path={`${url}/account-address`} component={Address} />
+              <Route path={`${url}/account-payment`} component={Payment} />
               {/* <Route path="/account/paymentedit" component={<PaymentEdit />} /> */}
             </Switch>
           </div>

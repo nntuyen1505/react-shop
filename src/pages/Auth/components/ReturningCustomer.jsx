@@ -1,9 +1,10 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { useAuth } from "../../../hook/useAuth";
-import { useState } from "react";
 import { Redirect } from "react-router";
+import AuthServices from "../../services/authServices";
+import { useDispatch, useSelector } from "react-redux";
+import { ERROR_LOGIN, LOGIN_SUCCESS } from "../../../store/type";
 
 const schema = yup
   .object({
@@ -17,11 +18,8 @@ const schema = yup
   .required();
 
 export default function ReturningCustomer() {
-
-
-  let {login, user} =useAuth()
-
-
+  const dispatch = useDispatch();
+  const { user, errorLogin } = useSelector((store) => store.auth);
 
   const {
     register,
@@ -31,28 +29,28 @@ export default function ReturningCustomer() {
     resolver: yupResolver(schema),
   });
 
-/*Login */
-  const [errorLogin,  setErrorLogin]=useState('')
-  // const [statusLogin, setStatusLogin]=useState(false)
-  // console.log(statusLogin)
-
+  /*Login */
   const onSubmit = async (dataFormLogin) => {
-    // console.log(dataFormLogin)
-    let res = await login(dataFormLogin)
-    console.log(res)
-    if(res){
-      setErrorLogin(res)
-      // setStatusLogin(true)
-    }else
-     if(dataFormLogin.error){
-      setErrorLogin(res.errorLogin)
+    let dataLogin = await AuthServices.login(dataFormLogin);
+    console.log(dataLogin);
+    if (dataLogin.data) {
+      dispatch({
+        type: LOGIN_SUCCESS,
+        payload: dataLogin.data,
+      });
+    } else if (dataLogin.error) {
+      dispatch({
+        type: ERROR_LOGIN,
+        payload: dataLogin.error,
+      });
     }
   };
-/*Login */
+  /*Login */
 
-if(user){
-  return  <Redirect to="/account"/>
-}
+  if (user) {
+    return <Redirect to="/account" />;
+  }
+
   return (
     <div className="col-12 col-md-6">
       {/* Card */}
@@ -73,7 +71,9 @@ if(user){
                     Email Address *
                   </label>
                   <input
-                    className={`form-control form-control-sm ${errors?.email ? "errorborder":""}`}
+                    className={`form-control form-control-sm ${
+                      errors?.email ? "errorborder" : ""
+                    }`}
                     type="email"
                     placeholder="Email Address *"
                     {...register("email")}
@@ -88,7 +88,9 @@ if(user){
                     Password *
                   </label>
                   <input
-                    className={`form-control form-control-sm ${errors?.password ? "errorborder":""}`}
+                    className={`form-control form-control-sm ${
+                      errors?.password ? "errorborder" : ""
+                    }`}
                     type="password"
                     placeholder="Password *"
                     {...register("password")}

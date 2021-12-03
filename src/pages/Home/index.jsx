@@ -12,6 +12,7 @@ import ProductList from "../../components/ProductList";
 import { Link } from "react-router-dom";
 import { api } from "../services/config";
 import Loading from "../../components/Loading";
+import { ProductModal } from "../../components/ProductModal";
 
 export default function Home() {
 
