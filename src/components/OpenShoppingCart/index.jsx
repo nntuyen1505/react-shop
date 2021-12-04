@@ -1,18 +1,17 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { CLOSE_MODAL } from "../../store/type";
+import { CLOSE_MODAL, REMOVE_FROM_CART } from "../../store/type";
 import { numberWithCommas } from "../../utils/numberWithCommas";
 
 export function OpenShoppingCart() {
-  const { openShow, listcart } = useSelector((store) => store.cart);
+  const { openShow, listCart, totalPrice, cartCount } = useSelector((store) => store.cart);
   const dispatch = useDispatch();
-  console.log(listcart);
+  console.log(listCart);
+
 
   const closeModalCart = () => {
-    document
-      .querySelector(".modal-backdrop")
-      .classList.remove("modal-backdrop");
+    document.querySelector(".modal-backdrop").classList.remove("modal-backdrop");
     document.querySelector("body").classList.remove("modal-open");
   };
 
@@ -37,78 +36,77 @@ export function OpenShoppingCart() {
             onClick={(e) => {
               e.preventDefault();
               dispatch({ type: CLOSE_MODAL });
-              closeModalCart();
+              closeModalCart()
             }}
           >
             <i className="fe fe-x" aria-hidden="true" />
           </button>
           {/* Header*/}
           <div className="modal-header line-height-fixed font-size-lg">
-            <strong className="mx-auto">Your Cart ()</strong>
+            <strong className="mx-auto">Your Cart ({cartCount})</strong>
           </div>
           {/* List group */}
-          {!listcart ? (
-            <div className="">NULL</div>
-          ) : (
-            <ul className="list-group list-group-lg list-group-flush">
-              {listcart.map((e, i) => {
-                return (
-                  <li className="list-group-item">
-                    <div className="row align-items-center">
-                      <div className="col-4">
-                        {/* Image */}
-                        <Link to={`/product/${e.slug}`}>
-                          <img
-                            className="img-fluid"
-                            src={e.images[0].medium_url}
-                            onClick={() => (
-                              dispatch({ type: CLOSE_MODAL }), closeModalCart()
+          <ul className="list-group list-group-lg list-group-flush">
+            {listCart.map((e, i) => { 
+              return (
+                <li className="list-group-item">
+                  <div className="row align-items-center">
+                    <div className="col-4">
+                      {/* Image */}
+                      <Link to={`/product/${e.slug}`}>
+                        <img
+                          className="img-fluid"
+                          src={e.images[0].medium_url}
+                          onClick={() => (
+                            dispatch({ type: CLOSE_MODAL }),
+                            closeModalCart()
                             )}
-                            alt="..."
-                          />
+                          alt="..."
+                        />
+                      </Link>
+                    </div>
+                    <div className="col-8">
+                      {/* Title */}
+                      <p className="font-size-sm font-weight-bold mb-6">
+                        <Link
+                          className="text-body"
+                          onClick={() => (
+                            dispatch({ type: CLOSE_MODAL }),
+                            closeModalCart()
+                            )}
+                          to={`/product/${e.slug}`
+                        }
+                        >
+                          {e.name}
+                        </Link>{" "}
+                        <br />
+                        <span className="text-muted">
+                          {numberWithCommas(e.price)}
+                        </span>
+                      </p>
+                      {/*Footer */}
+                      <div className="d-flex align-items-center">
+                        {/* Select */}
+                        <input type="text" value={e.number}/>
+                        {/* Remove */}
+                        <Link
+                          className="font-size-xs text-gray-400 ml-auto"
+                          to="#!"
+                          onClick={()=>dispatch({type:REMOVE_FROM_CART, payload: e.id})}
+                        >
+                          <i className="fe fe-x" /> Remove
                         </Link>
                       </div>
-                      <div className="col-8">
-                        {/* Title */}
-                        <p className="font-size-sm font-weight-bold mb-6">
-                          <Link
-                            className="text-body"
-                            onClick={() => (
-                              dispatch({ type: CLOSE_MODAL }), closeModalCart()
-                            )}
-                            to={`/product/${e.slug}`}
-                          >
-                            {e.name}
-                          </Link>{" "}
-                          <br />
-                          <span className="text-muted">
-                            {numberWithCommas(e.price)}
-                          </span>
-                        </p>
-                        {/*Footer */}
-                        <div className="d-flex align-items-center">
-                          {/* Select */}
-                          <input type="text" value={e.number} />
-                          {/* Remove */}
-                          <Link
-                            className="font-size-xs text-gray-400 ml-auto"
-                            to="#!"
-                          >
-                            <i className="fe fe-x" /> Remove
-                          </Link>
-                        </div>
-                      </div>
                     </div>
-                  </li>
-                );
-              })}
-            </ul>
-          )}
-
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
           {/* Footer */}
           <div className="modal-footer line-height-fixed font-size-sm bg-light mt-auto">
             <strong>Subtotal</strong>{" "}
-            <strong className="ml-auto">$89.00</strong>
+            <strong className="ml-auto">{numberWithCommas(totalPrice)} VNĐ</strong>
           </div>
           {/* Buttons */}
           <div className="modal-body">

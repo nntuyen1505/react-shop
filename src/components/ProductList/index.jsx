@@ -9,12 +9,12 @@ export default function ProductList({data}) {
   return (
     <div className="row">
       {
-        data.map((item, index)=> (
+        data.map((prod, index)=> (
           // console.log("item",item),
         <ProductItem 
-          item={item}  
+          productData={prod}  
           // setShowProduct={setShowProduct} 
-          key={item.id}/>
+          key={prod.id}/>
         ))
       }
       {/* <ProductModal {...showProduct}/> */}

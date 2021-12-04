@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
@@ -6,7 +7,24 @@ import { OPEN_MODAL_CART, OPEN_MODAL_SEARCH } from "../../../store/type";
 
 export function NavBarBottom() {
   const { user } = useSelector((store) => store.auth);
+  const { listCart, cartCount } = useSelector((store) => store.cart);
+
+  // console.log(`cartCount`, cartCount)
+
   const dispatch = useDispatch();
+
+
+  // const [cartCount, setCartCount] = useState(0);
+
+  // useEffect(() => {
+  //   let count = 0;
+  //   listCart.forEach((item) => {
+  //     console.log("item", item)
+  //     count += item.number;
+  //   });
+  //   setCartCount(count);
+  // }, [listCart, cartCount]);
+
 
   const openModalCart = () => {
    
@@ -55,9 +73,9 @@ export function NavBarBottom() {
             </li>
             <li className="nav-item dropdown">
               {/* Toggle */}
-              <a className="nav-link" data-toggle="dropdown" to="#">
+              <Link className="nav-link" data-toggle="dropdown"  to="#">
                 Pages
-              </a>
+              </Link>
               {/* Menu */}
               <div className="dropdown-menu">
                 <div className="card card-lg">
@@ -95,9 +113,9 @@ export function NavBarBottom() {
             </li>
             <li className="nav-item dropdown">
               {/* Toggle */}
-              <a className="nav-link" data-toggle="dropdown" to="#">
+              <Link className="nav-link" data-toggle="dropdown" to="#">
                 Blog
-              </a>
+              </Link>
               {/* Menu */}
               <div className="dropdown-menu">
                 <div className="card card-lg">
@@ -169,7 +187,7 @@ export function NavBarBottom() {
                   openModalCart();
                 }}
               >
-                <span data-cart-items={2}>
+                <span data-cart-items={cartCount}>
                   <i className="fe fe-shopping-cart" />
                 </span>
               </Link>

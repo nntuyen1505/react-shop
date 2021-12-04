@@ -1,4 +1,4 @@
-// import { ADD_TO_CART, ADJUST_QTY, LOAD_CURRENT_ITEM, REOMOVE_FROM_CART } from "../type";
+// import { ADD_TO_CART, ADJUST_QTY, LOAD_CURRENT_ITEM, REMOVE_FROM_CART } from "../type";
 
 // export const addToCart = (itemID) => {
 //     return {
@@ -11,22 +11,24 @@
 
 // export const removeFromCart = (itemID) => {
 //     return {
-//         type: REOMOVE_FROM_CART,
+//         type: REMOVE_FROM_CART,
 //         payload: {
 //             id: itemID,
 //         },
 //     };
 // };
 
-// export const adjustQty = (itemID, value) => {
+
+// export const adjustItemQty = (itemID, qty) => {
 //     return {
 //         type: ADJUST_QTY,
 //         payload: {
 //             id: itemID,
-//             qty: value,
+//             qty,
 //         },
 //     };
 // };
+
 
 // export const loadCurrentItem = (item) => {
 //     return {

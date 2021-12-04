@@ -1,32 +1,52 @@
-import { findAllInRenderedTree } from "react-dom/test-utils";
-import { ADD_TO_CART, CLOSE_MODAL, OPEN_MODAL_CART } from "../type";
+import {
+  ADD_TO_CART,
+  CLOSE_MODAL,
+  OPEN_MODAL_CART,
+  REMOVE_FROM_CART,
+} from "../type";
 
+const listCart = JSON.parse(localStorage.getItem("cart")) || [];
+const cartCount = listCart.length;
+const totalPrice = JSON.parse(localStorage.getItem("totalPrice")) || 0;
 const cartInitial = {
-  listcart: JSON.parse(localStorage.getItem("cart")) || [],
+  listCart: listCart,
   openShow: false,
+  cartCount: cartCount,
+  totalPrice: totalPrice,
 };
 
 const cartReducer = (state = cartInitial, action) => {
-  let { listcart } = state;
+  let { listCart, totalPrice, cartCount } = state;
 
   switch (action.type) {
     case ADD_TO_CART:
-      const index = listcart.findIndex((item) => item.id === action.payload.id);
+      const index = listCart.findIndex((item) => item.id === action.payload.id);
       if (index == -1) {
-        listcart.push(action.payload);
+        listCart.push(action.payload);
+        action.payload.number = action.payload.number || 1;
+        action.payload.number = action.payload.cartCount || 1;
+        totalPrice = totalPrice + action.payload.price * action.payload.number;
       } else {
-        if (listcart[index].number) {
-          listcart[index].number = listcart[index].number + 1 || 1;
+        if (listCart[index].number) {
+          listCart[index].number = listCart[index].number + 1;
+          action.payload.number = action.payload.cartCount || 1;
+          totalPrice =
+            totalPrice + action.payload.price * action.payload.number;
         } else {
-          listcart[index].number = 2;
+          listCart[index].number = 2;
         }
       }
-      localStorage.setItem("cart", JSON.stringify(listcart));
+      localStorage.setItem("cart", JSON.stringify(listCart));
+      localStorage.setItem("totalPrice", JSON.stringify(totalPrice));
 
       return {
         ...state,
-        listcart,
+        listCart,
+        cartCount: cartCount + action.payload.number,
+        totalPrice,
       };
+    
+     
 
     case OPEN_MODAL_CART:
       return {

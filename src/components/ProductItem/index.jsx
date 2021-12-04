@@ -6,7 +6,7 @@ import { ADD_TO_CART, OPEN_PRODUCT_MODAL } from "../../store/type";
 import { numberWithCommas } from "../../utils/numberWithCommas";
 
 
-export default function ProductItem({ item }) {
+export default function ProductItem({ productData }) {
   const { listcart } = useSelector((store) => store.cart);
   console.log(`LIST_CARTTTTT`, listcart)
   const { productModal } = useSelector((store) => store.product);
@@ -24,24 +24,24 @@ export default function ProductItem({ item }) {
         {/* Image */}
         <div className="card-img">
           {/* Image */}
-          <Link className="card-img-hover" to={`/product/${item.slug}`}>
+          <Link className="card-img-hover" to={`/product/${productData.slug}`}>
             <img
               className="card-img-top card-img-back"
               src={
-                item.images[0].large_url ===
+                productData.images[0].large_url ===
                 "https://salt.tikicdn.com/assets/img/image.svg"
                   ? "img/covers/cover-1.png"
-                  : item.images[0].large_url
+                  : productData.images[0].large_url
               }
               alt="..."
             />
             <img
               className="card-img-top card-img-front"
               src={
-                item.images[0].large_url ===
+                productData.images[0].large_url ===
                 "https://salt.tikicdn.com/assets/img/image.svg"
                   ? "img/covers/cover-1.png"
-                  : item.images[0].large_url
+                  : productData.images[0].large_url
               }
               alt="..."
             />
@@ -54,7 +54,7 @@ export default function ProductItem({ item }) {
                 data-toggle="modal"
                 data-target="#modalProduct"
                 onClick={() => {
-                  dispatch({ type: OPEN_PRODUCT_MODAL, payload: item })
+                  dispatch({ type: OPEN_PRODUCT_MODAL, payload: productData })
                 }}
               >
                 <i className="fe fe-eye" />
@@ -64,7 +64,7 @@ export default function ProductItem({ item }) {
               <button
                 className="btn btn-xs btn-circle btn-white-primary"
                 data-toggle="button"
-                onClick={() => dispatch({ type: ADD_TO_CART, payload: item })}
+                onClick={() => dispatch({ type: ADD_TO_CART, payload: productData })}
               >
                 <i className="fe fe-shopping-cart" />
               </button>
@@ -89,14 +89,14 @@ export default function ProductItem({ item }) {
           </div>
           {/* Title */}
           <div className="font-weight-bold">
-            <Link className="text-body" to={`/product/${item.slug}`}>
-              {item.name}
+            <Link className="text-body" to={`/product/${productData.slug}`}>
+              {productData.name}
             </Link>
           </div>
           {/* Price */}
-          {item.price && (
+          {productData.price && (
             <div className="font-weight-bold text-muted">
-              {numberWithCommas(item.price)}VND
+              {numberWithCommas(productData.price)}VND
             </div>
           )}
         </div>

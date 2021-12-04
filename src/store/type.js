@@ -11,7 +11,12 @@ export const PRODUCT_DETAIL = "PRODUCT_DETAIL";
 export const CATEGORIES = "CATEGORIES";
 export const PRODUCT_SHOP = "PRODUCT_SHOP";
 export const PAGINATE = "PAGINATE";
+
+
 export const ADD_TO_CART = "ADD_TO_CART";
+export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+
+
 export const PRODUCT_MODAL = "PRODUCT_MODAL"
 
 export const OPEN_PRODUCT_MODAL = "PRODUCT_MODAL"
