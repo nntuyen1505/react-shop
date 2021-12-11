@@ -33,16 +33,22 @@ export default function ReturningCustomer() {
   const onSubmit = async (dataFormLogin) => {
     let dataLogin = await AuthServices.login(dataFormLogin);
     console.log(dataLogin);
-    if (dataLogin.data) {
-      dispatch({
-        type: LOGIN_SUCCESS,
-        payload: dataLogin.data,
-      });
-    } else if (dataLogin.error) {
-      dispatch({
-        type: ERROR_LOGIN,
-        payload: dataLogin.error,
-      });
+
+    try{
+      if (dataLogin.data) {
+        dispatch({
+          type: LOGIN_SUCCESS,
+          payload: dataLogin.data,
+        });
+      } else if (dataLogin.error) {
+        dispatch({
+          type: ERROR_LOGIN,
+          payload: dataLogin.error,
+        });
+      }
+    }
+    catch(error){
+      console.log(error)
     }
   };
   /*Login */

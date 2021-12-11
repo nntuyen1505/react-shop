@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -41,11 +41,17 @@ export function PersonalInfo() {
     // console.log(dataFormUpdate);
     alert("Update successful!");
     let res = await AuthServices.updateInfo(dataFormUpdate);
-    if (res.data) {
-      dispatch({ type: UPDATE_SUCCESS, payload: res.data });
-    } else if (res.error) {
-      console.log(res.error);
-      dispatch({ type: ERROR_UPDATE, payload: res.error });
+    try{
+
+      if (res.data) {
+        dispatch({ type: UPDATE_SUCCESS, payload: res.data });
+      } else if (res.error) {
+        console.log(res.error);
+        dispatch({ type: ERROR_UPDATE, payload: res.error });
+      }
+    }
+    catch(error){
+      console.log(error)
     }
 
     localStorage.setItem("data", JSON.stringify(res.data));

@@ -1,21 +1,22 @@
-import { CLOSE_MODAL, OPEN_MODAL_SIZE } from "../type"
+import { CLOSE_MODAL, OPEN_MODAL_SIZE } from "../type";
 
 const sizeInitial = {
-    openSize: false
-}
+    openSize: false,
+};
 const sizeReducer = (state = sizeInitial, action) => {
     switch (action.type) {
         case OPEN_MODAL_SIZE:
             return {
                 ...state,
-                openSize: true
-            }
+                openSize: true,
+            };
         case CLOSE_MODAL:
             return {
                 ...state,
-                openSize: false
-            }
+                openSize: false,
+            };
+        default:
+            return state;
     }
-    return state
-}
-export default sizeReducer
+};
+export default sizeReducer;

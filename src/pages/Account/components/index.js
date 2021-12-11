@@ -1,6 +1,6 @@
 export * from "./Address"
 export * from "./AddressEdit"
-export * from "./Order"
+export * from "./OrderDetail"
 export * from "./Orders"
 export * from "./Payment"
 export * from "./PaymentEdit"

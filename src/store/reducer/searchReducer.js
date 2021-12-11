@@ -15,7 +15,9 @@ const searchReducer = (state = searchInitial, action) => {
                 ...state,
                 openSearch: false
             }
+        default:
+            return state;
     }
-    return state
+
 }
 export default searchReducer

@@ -50,3 +50,22 @@ body {
         height: 30px;
     }
 }
+
+button.plus {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.d-flex.align-items-center input {
+    width: 40px;
+    height: 30px;
+    border: none;
+    text-align: center;
+}
+
+button.minus {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}

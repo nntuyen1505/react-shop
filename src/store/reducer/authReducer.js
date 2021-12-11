@@ -9,8 +9,8 @@ import {
 } from "../type";
 
 const authReducerInitial = {
-    user: JSON.parse(localStorage.getItem("data")) || null,
-    userLogup: JSON.parse(localStorage.getItem("data")) || null,
+    user: JSON.parse(localStorage.getItem("user")) || null,
+    userLogup: JSON.parse(localStorage.getItem("user")) || null,
     errorLogin: "",
     errorLogup: "",
     errorUpdate: "",
@@ -20,7 +20,7 @@ const authReducer = (state = authReducerInitial, action) => {
     switch (action.type) {
         case LOGIN_SUCCESS:
             /*Gửi  Thông tin đăng nhập + accessToken */
-            localStorage.setItem("data", JSON.stringify(action.payload));
+            localStorage.setItem("user", JSON.stringify(action.payload));
             localStorage.setItem("token", JSON.stringify(action.payload.token));
             return {
                 ...state,
@@ -35,14 +35,14 @@ const authReducer = (state = authReducerInitial, action) => {
             return {
                 ...state,
                 errorLogup: action.payload,
-            }
+            };
         case ERROR_UPDATE:
             return {
                 ...state,
                 errorUpdate: action.payload,
-            }
+            };
         case LOGOUT_SUCCESS:
-            localStorage.removeItem("data");
+            localStorage.removeItem("user");
             localStorage.removeItem("token");
             return {
                 ...state,
@@ -50,7 +50,7 @@ const authReducer = (state = authReducerInitial, action) => {
             };
 
         case UPDATE_SUCCESS:
-            localStorage.setItem("data", JSON.stringify(action.payload));
+            localStorage.setItem("user", JSON.stringify(action.payload));
             localStorage.setItem("token", JSON.stringify(action.payload.token));
             return {
                 ...state,
@@ -62,7 +62,8 @@ const authReducer = (state = authReducerInitial, action) => {
                 ...state,
                 userLogup: action.payload,
             };
+        default:
+            return state;
     }
-    return state;
 };
 export default authReducer;

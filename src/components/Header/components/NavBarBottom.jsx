@@ -8,6 +8,7 @@ import { OPEN_MODAL_CART, OPEN_MODAL_SEARCH } from "../../../store/type";
 export function NavBarBottom() {
   const { user } = useSelector((store) => store.auth);
   const { listCart, cartCount } = useSelector((store) => store.cart);
+  const { widhlist } = useSelector((store) => store.product);
 
   // console.log(`cartCount`, cartCount)
 
@@ -172,9 +173,18 @@ export function NavBarBottom() {
             </li>
 
             <li className="nav-item ml-lg-n4">
-              <Link className="nav-link" to="/account/account-wishlist">
-                <i className="fe fe-heart" />
-              </Link>
+              {
+                widhlist.length <= 0 ?(
+                  <Link className="nav-link" to="/account/account-wishlist">
+                    <i className="fe fe-heart" />
+                  </Link>
+                ) : (
+                  <Link className="nav-link" to="/account/account-wishlist">
+                    <i class="fas fa-heart"/>
+                  </Link>
+                )
+              }
+              
             </li>
             <li className="nav-item ml-lg-n4">
               <Link

@@ -1,18 +1,23 @@
 import { useDispatch } from "react-redux";
 import { LOGOUT_SUCCESS } from "../../store/type";
 import BreadCrumb, { BreadCrumbItem } from "../../components/BreadCrumb";
-import { Address, Orders, Payment, PersonalInfo, WishList } from "./components";
+import {
+  Address,
+  AddressEdit,
+  OrderDetail,
+  Orders,
+  Payment,
+  PaymentEdit,
+  PersonalInfo,
+  WishList,
+} from "./components";
 import { Route, Switch, useRouteMatch } from "react-router";
 import { NavLink } from "react-router-dom";
-import Layout from "../../components/layout";;
-
+import Layout from "../../components/layout";
 
 export default function Account() {
-
-
-  const dispatch = useDispatch()
-  let { url } = useRouteMatch();  
-
+  const dispatch = useDispatch();
+  let { url } = useRouteMatch();
 
   return (
     <Layout>
@@ -35,7 +40,7 @@ export default function Account() {
                 <div className="list-group list-group-sm list-group-strong list-group-flush-x">
                   <NavLink
                     className="list-group-item list-group-item-action dropright-toggle"
-                    to={`${url}/oders`}
+                    to={`${url}`}
                   >
                     Orders
                   </NavLink>
@@ -47,7 +52,7 @@ export default function Account() {
                   </NavLink>
                   <NavLink
                     className="list-group-item list-group-item-action dropright-toggle "
-                    to={`${url}`}
+                    to={`${url}/info`}
                     exact
                   >
                     Personal Info
@@ -69,8 +74,7 @@ export default function Account() {
                     to="/"
                     onClick={(e) => {
                       e.preventDefault();
-                      dispatch({type:LOGOUT_SUCCESS})
-
+                      dispatch({ type: LOGOUT_SUCCESS });
                     }}
                   >
                     Logout
@@ -79,14 +83,18 @@ export default function Account() {
               </nav>
             </div>
             <Switch>
-              {/* <Route path="/account/address-edit" exact  component={<AddressEdit />}/> */}
-              <Route path={`${url}/`} exact component={PersonalInfo} />
-              <Route path={`${url}/oders`} component={Orders} />
-              {/* <Route path="/order-detail" component={Order} /> */}
+              <Route
+                path={`${url}/address-edit`}
+                exact
+                component={AddressEdit}
+              />
+              <Route path={`${url}/info`}  component={PersonalInfo} />
+              <Route path={`${url}/`} exact component={Orders} />
+              <Route path={`${url}/:slug`} component={OrderDetail} />
               <Route path={`${url}/account-wishlist`} component={WishList} />
               <Route path={`${url}/account-address`} component={Address} />
               <Route path={`${url}/account-payment`} component={Payment} />
-              {/* <Route path="/account/paymentedit" component={<PaymentEdit />} /> */}
+              <Route path={`${url}/paymentedit`} component={PaymentEdit} />
             </Switch>
           </div>
         </div>

@@ -1,8 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
+import { useDispatch,useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { ADD_TO_CART, WIDH_LIST } from "../../../store/type";
 import { numberWithCommas } from "../../../utils/numberWithCommas";
 
 export default function Product({ data }) {
+
+  const {listCart} = useSelector((store) => store.cart)
+  const dispatch = useDispatch()
 
   let $ = window.$;
   let ref = useRef();
@@ -177,6 +182,7 @@ export default function Product({ data }) {
                         <button
                           type="submit"
                           className="btn btn-block btn-dark mb-2"
+                          onClick={()=>dispatch({type:ADD_TO_CART,payload:{...data}})}
                         >
                           Add to Cart <i className="fe fe-shopping-cart ml-2" />
                         </button>
@@ -186,6 +192,7 @@ export default function Product({ data }) {
                         <button
                           className="btn btn-outline-dark btn-block mb-2"
                           data-toggle="button"
+                          onClick={()=>dispatch({type:WIDH_LIST, payload:{...data}})}
                         >
                           Wishlist <i className="fe fe-heart ml-2" />
                         </button>

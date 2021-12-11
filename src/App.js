@@ -23,6 +23,7 @@ import BlogDetail from "./pages/BlogDetail";
 import PrivateRoutte from "./components/PrivateRoute";
 import ComingSoon from "./pages/CommingSoon";
 import { ProductModal } from "./components/ProductModal";
+import Loading from "./components/Loading";
 
 function App() {
 
@@ -30,18 +31,17 @@ function App() {
     <BrowserRouter>
         <Search />
         <OpenShoppingCart />
-        <ProductModal/>
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/about" component={Abouts} />
           <PrivateRoutte path="/account" component={Account} />
           <Route path="/auth" component={Auth} />
-          <Route path="/checkout" component={CheckOut} />
+          <PrivateRoutte path="/checkout" component={CheckOut} />
           <Route path="/blog" component={Blog} />
           <Route path="/blog-detail/:slug" component={BlogDetail}/>
           <Route path="/contact" component={ContactUs} />
           <Route path="/faq" component={Faq} />
-          <Route path="/order" component={OrderCompleted} />
+          <Route path="/order-completed/:slug" component={OrderCompleted} />
           <Route path="/product/:slug" component={ProductPage} />
           <Route path="/shipping" component={ShippingAndReturns} />
           <Route path="/shop" component={Shop} />

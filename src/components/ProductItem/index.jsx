@@ -2,15 +2,10 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { ADD_TO_CART, OPEN_PRODUCT_MODAL } from "../../store/type";
+import { ADD_TO_CART, OPEN_PRODUCT_MODAL, WIDH_LIST } from "../../store/type";
 import { numberWithCommas } from "../../utils/numberWithCommas";
 
-
 export default function ProductItem({ productData }) {
-  const { listcart } = useSelector((store) => store.cart);
-  console.log(`LIST_CARTTTTT`, listcart)
-  const { productModal } = useSelector((store) => store.product);
-  // console.log(`productModalllllll`, productModal)
   const dispatch = useDispatch();
 
   return (
@@ -54,7 +49,7 @@ export default function ProductItem({ productData }) {
                 data-toggle="modal"
                 data-target="#modalProduct"
                 onClick={() => {
-                  dispatch({ type: OPEN_PRODUCT_MODAL, payload: productData })
+                  dispatch({ type: OPEN_PRODUCT_MODAL, payload: productData });
                 }}
               >
                 <i className="fe fe-eye" />
@@ -64,7 +59,9 @@ export default function ProductItem({ productData }) {
               <button
                 className="btn btn-xs btn-circle btn-white-primary"
                 data-toggle="button"
-                onClick={() => dispatch({ type: ADD_TO_CART, payload: productData })}
+                onClick={() =>
+                  dispatch({ type: ADD_TO_CART, payload: { ...productData } })
+                }
               >
                 <i className="fe fe-shopping-cart" />
               </button>
@@ -73,6 +70,9 @@ export default function ProductItem({ productData }) {
               <button
                 className="btn btn-xs btn-circle btn-white-primary"
                 data-toggle="button"
+                onClick={() =>
+                  dispatch({ type: WIDH_LIST, payload: { ...productData } })
+                }
               >
                 <i className="fe fe-heart" />
               </button>

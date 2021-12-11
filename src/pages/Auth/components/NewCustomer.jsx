@@ -23,10 +23,8 @@ const schema = yup
   .required();
 
 export default function NewCustomer() {
-
-  const dispatch = useDispatch()
-  const {user, errorLogup} = useSelector((store) => store.auth)
-
+  const dispatch = useDispatch();
+  const { user, errorLogup } = useSelector((store) => store.auth);
 
   const {
     register,
@@ -35,15 +33,20 @@ export default function NewCustomer() {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const onSubmit = async(dataFormRegister) => {
-    let res = await AuthServices.register(dataFormRegister)
-    if(res.data){
-      dispatch({type:LOGUP_SUCCESS, payload: res.data })
-      alert("ĐĂNG KÝ THÀNH CÔNG!")
-    }else if(res.error){
-      dispatch({type: ERROR_LOGUP, payload: res.error})
+  const onSubmit = async (dataFormRegister) => {
+    let res = await AuthServices.register(dataFormRegister);
+    try {
+      if (res.data) {
+        dispatch({ type: LOGUP_SUCCESS, payload: res.data });
+        alert("ĐĂNG KÝ THÀNH CÔNG!");
+      } else if (res.error) {
+        dispatch({ type: ERROR_LOGUP, payload: res.error });
+      }
+    } 
+    catch (error) {
+      console.log(error);
     }
-  }
+  };
 
   return (
     <div className="col-12 col-md-6">
@@ -56,7 +59,7 @@ export default function NewCustomer() {
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="row">
               <div className="col-12">
-              <p className="error-class">{errorLogup}</p>
+                <p className="error-class">{errorLogup}</p>
 
                 {/* Email */}
                 <div className="form-group">
@@ -64,7 +67,9 @@ export default function NewCustomer() {
                     First Name *
                   </label>
                   <input
-                    className={`form-control form-control-sm ${errors?.firstName ? "errorborder":""}`}
+                    className={`form-control form-control-sm ${
+                      errors?.firstName ? "errorborder" : ""
+                    }`}
                     type="text"
                     placeholder="First Name *"
                     {...register("firstName")}
@@ -79,7 +84,9 @@ export default function NewCustomer() {
                     Last Name *
                   </label>
                   <input
-                    className={`form-control form-control-sm ${errors?.lastName ? "errorborder":""}`}
+                    className={`form-control form-control-sm ${
+                      errors?.lastName ? "errorborder" : ""
+                    }`}
                     type="text"
                     placeholder="Last Name *"
                     {...register("lastName")}
@@ -94,7 +101,9 @@ export default function NewCustomer() {
                     Email Address *
                   </label>
                   <input
-                    className={`form-control form-control-sm ${errors?.email ? "errorborder":""}`}
+                    className={`form-control form-control-sm ${
+                      errors?.email ? "errorborder" : ""
+                    }`}
                     type="email"
                     placeholder="Email Address *"
                     {...register("email")}
@@ -109,7 +118,9 @@ export default function NewCustomer() {
                     Password *
                   </label>
                   <input
-                    className={`form-control form-control-sm ${errors?.password ? "errorborder":""}`}
+                    className={`form-control form-control-sm ${
+                      errors?.password ? "errorborder" : ""
+                    }`}
                     type="password"
                     placeholder="Password *"
                     {...register("password")}
@@ -124,7 +135,9 @@ export default function NewCustomer() {
                     Confirm Password *
                   </label>
                   <input
-                    className={`form-control form-control-sm ${errors?.passwordConfirmation ? "errorborder":""}`}
+                    className={`form-control form-control-sm ${
+                      errors?.passwordConfirmation ? "errorborder" : ""
+                    }`}
                     type="password"
                     placeholder="Confrm Password *"
                     {...register("passwordConfirmation")}

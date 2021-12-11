@@ -7,12 +7,10 @@ import Features from "../../components/Features";
 import Review from "./components/Review";
 import Promo from "../../components/Promo";
 import Layout from "../../components/layout";
-import ProductServices from "../services/productServices";
 import ProductList from "../../components/ProductList";
 import { Link } from "react-router-dom";
 import { api } from "../services/config";
 import Loading from "../../components/Loading";
-import { ProductModal } from "../../components/ProductModal";
 
 export default function Home() {
 
