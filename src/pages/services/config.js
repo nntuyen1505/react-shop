@@ -1,4 +1,4 @@
-export const api = "http://cfd-reactjs.herokuapp.com";
+export const api = "https://cfd-reactjs.herokuapp.com";
 
 const refreshToken = async () => {
   const refreshToken = JSON.parse(localStorage.getItem("token"))?.refreshToken;
