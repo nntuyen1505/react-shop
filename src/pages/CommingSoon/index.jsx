@@ -1,9 +1,15 @@
 import React from 'react'
 import Navbar from './components/Navbar'
+import useCountDown from '../../hook/useCountDown'
 
 export default function ComingSoon() {
-    return (
 
+
+  let { day, hours, minute, seconds } = useCountDown(
+    (1 * 24 + 5) * 60 * 60 + 1800
+  );
+
+    return (
         <>
         <Navbar/>
         <section className="bg-cover" style={{marginTop: '-90px', backgroundImage: 'url(/img/covers/cover-22.jpg)'}}>
@@ -19,28 +25,28 @@ export default function ComingSoon() {
               {/* Counter */}
               <div className="d-flex justify-content-center mb-10" data-countdown data-date="Jan 5, 2021 15:37:25">
                 <div className="text-center">
-                  <div className="font-size-h1 font-weight-bolder" data-days>00</div>
+                  <div className="font-size-h1 font-weight-bolder" data-days>{day.toString().padStart(2,0)}</div>
                   <div className="heading-xxs">Days</div>
                 </div>
                 <div className="px-1 px-md-4">
                   <div className="font-size-h2 font-weight-bolder">:</div>
                 </div>
                 <div className="text-center">
-                  <div className="font-size-h1 font-weight-bolder" data-hours>00</div>
+                  <div className="font-size-h1 font-weight-bolder" data-hours>{hours.toString().padStart(2,0)}</div>
                   <div className="heading-xxs">Hours</div>
                 </div>
                 <div className="px-1 px-md-4">
                   <div className="font-size-h2 font-weight-bolder">:</div>
                 </div>
                 <div className="text-center">
-                  <div className="font-size-h1 font-weight-bolder" data-minutes>00</div>
+                  <div className="font-size-h1 font-weight-bolder" data-minutes>{minute.toString().padStart(2,0)}</div>
                   <div className="heading-xxs">Minutes</div>
                 </div>
                 <div className="px-1 px-md-4">
                   <div className="font-size-h2 font-weight-bolder">:</div>
                 </div>
                 <div className="text-center">
-                  <div className="font-size-h1 font-weight-bolder" data-seconds>00</div>
+                  <div className="font-size-h1 font-weight-bolder" data-seconds>{seconds.toString().padStart(2,0)}</div>
                   <div className="heading-xxs">Seconds</div>
                 </div>
               </div>
