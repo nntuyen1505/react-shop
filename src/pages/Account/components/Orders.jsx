@@ -36,13 +36,13 @@ export function Orders() {
     }
   }
   
-  useEffect(async () => {
-    // console.log(`ABXCCC`, Object.keys(allOrder).length);
-    if (Object.keys(allOrder).length > 0) {
-      getOrder();
-    }
-  }, []);
-  let dataRender = render(allOrder?.listCart);
+  // useEffect(async () => {
+  //   // console.log(`ABXCCC`, Object.keys(allOrder).length);
+  //   if (Object.keys(allOrder).length > 0) {
+  //     getOrder();
+  //   }
+  // }, []);
+  // let dataRender = render(allOrder?.listCart);
 
   console.log(`allorder`, allOrder);
   console.log(`itemOrder`, orderCart);
