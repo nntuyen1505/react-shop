@@ -13,44 +13,6 @@ import { api } from "../services/config";
 import Loading from "../../components/Loading";
 
 export default function Home() {
-
-  const [renderList,setRenderList]=useState([])
-  const [state, setState] = useState({
-    loading:true,
-    data1: [],
-    data2: [],
-    data3: [],
-  });
-
-  async function callAPI() {
-    let res = await fetch(`${api}/product?sort=real_price.-1&categories=1789&page=3`).then((res) =>
-      res.json()
-    );
-    let res2 = await fetch(`${api}/product?sort=real_price.-1&categories=1801&page=3`).then((res) =>
-      res.json()
-    );
-    let res3 = await fetch(`${api}/product?sort=real_price.-1&categories=1846&page=3`).then((res) =>
-      res.json()
-    );
-
-    if (res.data && res2.data && res3.data) {
-      setState({
-        loading:false,
-        data1: res.data,
-        data2: res2.data,
-        data3: res3.data,
-
-      });
-      setRenderList(res.data)
-    }
-  }
-
-  useEffect(() => {
-
-    callAPI();
-  }, []);
-
-
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -58,9 +20,43 @@ export default function Home() {
     });
   }, []);
 
-  
-  if(state.loading){
-    return <Loading/>
+  const [renderList, setRenderList] = useState([]);
+  const [state, setState] = useState({
+    loading: true,
+    data1: [],
+    data2: [],
+    data3: [],
+  });
+
+  async function callAPI() {
+    
+    let res = await fetch(
+      `${api}/product?sort=real_price.-1&categories=1789&page=3`
+    ).then((res) => res.json());
+    let res2 = await fetch(
+      `${api}/product?sort=real_price.-1&categories=1801&page=3`
+    ).then((res) => res.json());
+    let res3 = await fetch(
+      `${api}/product?sort=real_price.-1&categories=1846&page=3`
+    ).then((res) => res.json());
+
+    if (res.data && res2.data && res3.data) {
+      setState({
+        loading: false,
+        data1: res.data,
+        data2: res2.data,
+        data3: res3.data,
+      });
+      setRenderList(res.data);
+    }
+  }
+
+  useEffect(() => {
+    callAPI();
+  }, []);
+
+  if (state.loading) {
+    return <Loading />;
   }
 
   return (
@@ -97,7 +93,7 @@ export default function Home() {
                   className="nav-link"
                   href="#topSellersTab"
                   data-toggle="tab"
-                  onClick={() =>setRenderList(state.data3)}
+                  onClick={() => setRenderList(state.data3)}
                 >
                   Laptop
                 </a>
@@ -107,7 +103,7 @@ export default function Home() {
           <div className="tab-content">
             <div className="tab-pane fade show active" id="topSellersTab">
               <div className="row">
-                    <ProductList data={renderList}/>
+                <ProductList data={renderList} />
               </div>
             </div>
           </div>

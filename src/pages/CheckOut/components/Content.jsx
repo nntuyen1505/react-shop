@@ -50,23 +50,25 @@ export default function Content() {
     resolver: yupResolver(schema),
   });
 
+
+
+  
   const onSubmit = async (dataFormCheckout) => {
-    let res = await CartServices.order(
-      { dataFormCheckout, day: today },
-      { listCart, totalPrice, cartCount }
-    );
+
+    let data= { listCart, totalPrice, cartCount, dataFormCheckout, day: today };
+
+    let res = await CartServices.order(data);
     console.log(`ResOrder`, res.data);
     try{
-
       if (res.data) {
         dispatch({ type: ORDER_CART, payload: res.data });
         dispatch({ type: CLEAR_CART });
         history.push(`/order-completed/${res.data._id}`);
       }
     }catch(error){
+
       console.log(error)
     }
-
   };
 
   return (

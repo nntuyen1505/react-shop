@@ -19,8 +19,8 @@ const cartInitial = {
     listCart: listCart,
     cartCount: cartCount,
     totalPrice: totalPrice,
-    orderCart: {},
-    allOrder: {},
+    orderCart: JSON.parse(localStorage.getItem("orderCart")) || {},
+    allOrder: JSON.parse(localStorage.getItem("allOrder")) || {},
     loading: true,
 };
 
@@ -143,22 +143,23 @@ const cartReducer = (state = cartInitial, action) => {
         case ORDER_CART:
             {
                 let { orderCart } = state
-                localStorage.setItem("orderCart", JSON.stringify(orderCart));
+                localStorage.setItem("orderCart", JSON.stringify(action.payload));
+                localStorage.setItem("allOrder", JSON.stringify(action.payload));
                 return {
                     ...state,
                     orderCart: action.payload,
                 };
             }
-        case ALL_ORDER:
-            {
-                let { allOrder } = state
-                localStorage.setItem("allOrder", JSON.stringify(allOrder));
-                return {
-                    ...state,
-                    allOrder: action.payload,
-                    loading: false
-                };
-            }
+            // case ALL_ORDER:
+            //     {
+            //         let { allOrder } = state
+            //         localStorage.setItem("allOrder", JSON.stringify(action.payload));
+            //         return {
+            //             ...state,
+            //             allOrder: action.payload,
+            //             loading: false
+            //         };
+            //     }
     }
     return state;
 };

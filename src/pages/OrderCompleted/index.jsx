@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { useRouteMatch } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router'
 import { Link } from 'react-router-dom'
@@ -7,13 +8,15 @@ import Layout from '../../components/layout'
 export default function OrderCompleted() {
 
   let  {slug} = useParams()
-  const {orderCart} = useSelector(store => store.cart)
-  console.log(`test_orderCart`, orderCart)
+  // let {_id}=useRouteMatch().params;
+  // console.log(`_id`, _id)
 
-  console.log(`slug`, slug)
-  useEffect(() => {
+  // const {orderCart} = useSelector(store => store.cart)
+  // console.log(`test_orderCart`, orderCart)
 
-  }, [slug])
+  // useEffect(() => {
+
+  // }, [slug])
 
     return (
       <Layout>

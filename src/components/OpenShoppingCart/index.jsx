@@ -15,6 +15,7 @@ export function OpenShoppingCart() {
   const { openShow, listCart, totalPrice, cartCount } = useSelector(
     (store) => store.cart
   );
+
   const dispatch = useDispatch();
 
   const closeModalCart = () => {
@@ -34,10 +35,10 @@ export function OpenShoppingCart() {
       console.log(error)
     }
 
-  }, [JSON.stringify(listCart)]);
+  }, [JSON.stringify(listCart,totalPrice, cartCount)]);
 
 
-  return (
+  return   (
     <div
       className="modal fixed-right fade show"
       style={{ display: openShow ? "block" : "none", paddingRight: "17px" }}

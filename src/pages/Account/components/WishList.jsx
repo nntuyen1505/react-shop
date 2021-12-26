@@ -29,9 +29,9 @@ export function WishList() {
                   <i className="fe fe-x" />
                 </button>
                 {/* Button */}
-                <button className="btn btn-xs btn-block btn-dark card-btn" data-toggle="modal" data-target="#modalProduct">
+                {/* <button className="btn btn-xs btn-block btn-dark card-btn" data-toggle="modal" data-target="#modalProduct">
                   <i className="fe fe-eye mr-2 mb-1" /> Quick View
-                </button>
+                </button> */}
                 {/* Image */}
                 {
                   e.images && (

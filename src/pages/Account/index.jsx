@@ -85,12 +85,12 @@ export default function Account() {
             <Switch>
               <Route
                 path={`${url}/address-edit`}
-                exact
+                
                 component={AddressEdit}
               />
               <Route path={`${url}/info`}  component={PersonalInfo} />
               <Route path={`${url}/`} exact component={Orders} />
-              <Route path={`${url}/:slug`} component={OrderDetail} />
+              {/* <Route path={`${url}/:slug`} component={OrderDetail} /> */}
               <Route path={`${url}/account-wishlist`} component={WishList} />
               <Route path={`${url}/account-address`} component={Address} />
               <Route path={`${url}/account-payment`} component={Payment} />
