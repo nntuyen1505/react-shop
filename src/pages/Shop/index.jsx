@@ -65,11 +65,11 @@ const {dataCategory,dataProduct,dataPaginate} = useSelector((store) => store.pro
   // let queryUrl = window.location.search
   // console.log(queryUrl)
   let objUrl = convertQueryToObject();
-  // console.log(objUrl);
+  console.log(objUrl);
   let queryUrl = convertObjectToQuery(objUrl);
 
 
-  // console.log(queryUrl);
+  console.log(queryUrl);
   // console.log(queryUrl)
   // console.log(window)
   // let p  =  convertQueryToObject()
@@ -86,9 +86,9 @@ const {dataCategory,dataProduct,dataPaginate} = useSelector((store) => store.pro
     let value = event.currentTarget.value;
     // console.log(value);
     let obj = convertQueryToObject();
-    // console.log(obj);
+    // console.log("obj1",obj);
     obj.sort = value;
-    // console.log(obj);
+    // console.log("obj2",obj);
     history.push(`${url}?${convertObjectToQuery(obj)}`);
   };
 

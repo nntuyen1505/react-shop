@@ -8,7 +8,7 @@ export function ProductModal() {
   const { openProductModal, productModal } = useSelector(
     (store) => store.product
   );
-  // console.log(`productModal`, productModal);
+  console.log(`productModal`, productModal);
   const dispatch = useDispatch();
 
   const closeModalProduct = () => {

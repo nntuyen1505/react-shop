@@ -7,7 +7,7 @@ import { numberWithCommas } from "../../utils/numberWithCommas";
 
 export default function ProductItem({ productData }) {
   const dispatch = useDispatch();
-
+// console.log(`productData`, productData)
   return (
     <div className="col-6 col-md-4 col-lg-3">
       {/* Card */}
@@ -49,7 +49,7 @@ export default function ProductItem({ productData }) {
                 data-toggle="modal"
                 data-target="#modalProduct"
                 onClick={() => {
-                  dispatch({ type: OPEN_PRODUCT_MODAL, payload: productData });
+                  dispatch({ type: OPEN_PRODUCT_MODAL, payload: {...productData} });
                 }}
               >
                 <i className="fe fe-eye" />

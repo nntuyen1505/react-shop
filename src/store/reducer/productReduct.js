@@ -34,22 +34,26 @@ const productReducer = (state = productReducerInitial, action) => {
                 ...state,
                 dataCategory: action.payload,
             };
+
         case PRODUCT_SHOP:
             return {
                 ...state,
                 dataProduct: action.payload,
             };
+
         case PAGINATE:
             return {
                 ...state,
                 dataPaginate: action.payload,
             };
+
         case OPEN_PRODUCT_MODAL:
             return {
                 ...state,
                 openProductModal: true,
                 productModal: action.payload,
             };
+
         case CLOSE_MODAL:
             return {
                 ...state,

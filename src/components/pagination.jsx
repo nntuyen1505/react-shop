@@ -21,9 +21,7 @@ const reverse = function (obj) {
 
 export default function Pagination({ currentPage, totalPage }) {
   function renderPaging() {
-
-
-    if(totalPage ===  1  ) return null
+    if (totalPage === 1) return null;
 
     let start = currentPage - 2;
     if (start < 1) start = 1;
@@ -57,7 +55,6 @@ export default function Pagination({ currentPage, totalPage }) {
   return (
     <nav className="d-flex justify-content-center justify-content-md-end">
       <ul className="pagination pagination-sm text-gray-400">
-
         {currentPage > 1 ? (
           <li className="page-item">
             <Link
@@ -73,7 +70,7 @@ export default function Pagination({ currentPage, totalPage }) {
         ) : (
           ""
         )}
-        
+
         {renderPaging()}
         {currentPage < totalPage && (
           <li className="page-item">

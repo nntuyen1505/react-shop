@@ -30,6 +30,7 @@ function App() {
   return (
     <BrowserRouter>
         <Search />
+        <ProductModal/>
         <OpenShoppingCart />
         <Switch>
           <Route path="/" exact component={Home} />
