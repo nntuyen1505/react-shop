@@ -29,16 +29,27 @@ export default function Home() {
   });
 
   async function callAPI() {
-    
     let res = await fetch(
       `${api}/product?sort=real_price.-1&categories=1789&page=3`
-    ).then((res) => res.json());
+    )
+      .then((res) => res.json())
+      .catch((err) => {
+        console.error(err);
+      });
     let res2 = await fetch(
       `${api}/product?sort=real_price.-1&categories=1801&page=3`
-    ).then((res) => res.json());
+    )
+      .then((res) => res.json())
+      .catch((err) => {
+        console.error(err);
+      });
     let res3 = await fetch(
       `${api}/product?sort=real_price.-1&categories=1846&page=3`
-    ).then((res) => res.json());
+    )
+      .then((res) => res.json())
+      .catch((err) => {
+        console.error(err);
+      });
 
     if (res.data && res2.data && res3.data) {
       setState({

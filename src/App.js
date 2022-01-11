@@ -23,7 +23,6 @@ import BlogDetail from "./pages/BlogDetail";
 import PrivateRoutte from "./components/PrivateRoute";
 import ComingSoon from "./pages/CommingSoon";
 import { ProductModal } from "./components/ProductModal";
-import Loading from "./components/Loading";
 
 function App() {
 

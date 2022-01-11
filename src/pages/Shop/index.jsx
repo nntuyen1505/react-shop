@@ -47,6 +47,7 @@ const {dataCategory,dataProduct,dataPaginate} = useSelector((store) => store.pro
   }, []);
 
   let thisRef = useRef();
+
   useEffect(() => {
     $(thisRef.current).flickity({
       pageDots: true,
@@ -55,7 +56,6 @@ const {dataCategory,dataProduct,dataPaginate} = useSelector((store) => store.pro
 
 
   const [title, setTitle] = useState("");
-  // console.log(title);
 
   useEffect(async () => {
     dispatch(fetchCategories())
@@ -64,12 +64,12 @@ const {dataCategory,dataProduct,dataPaginate} = useSelector((store) => store.pro
   // console.log(category.title)
   // let queryUrl = window.location.search
   // console.log(queryUrl)
+
   let objUrl = convertQueryToObject();
-  console.log(objUrl);
+  console.log('objUrl',objUrl);
   let queryUrl = convertObjectToQuery(objUrl);
+  console.log('queryUrl',queryUrl);
 
-
-  console.log(queryUrl);
   // console.log(queryUrl)
   // console.log(window)
   // let p  =  convertQueryToObject()

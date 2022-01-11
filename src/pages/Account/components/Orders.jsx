@@ -100,7 +100,7 @@ export function Orders() {
                 <div className="row align-items-center">
                   <div className="col-12 col-lg-6">
                     <div className="form-row mb-4 mb-lg-0">
-                      {orderCart?.listCart.map((e) => (
+                      {orderCart?.listCart?.map((e) => (
                         <div className="col-3">
                           {/* Image */}
                           <div
@@ -111,7 +111,7 @@ export function Orders() {
                           />
                         </div>
                       ))}
-                      {orderCart?.listCart.length > 4 ? (
+                      {orderCart?.listCart?.length > 4 ? (
                         <div className="col-3">
                           {/* Image */}
                           <div className="embed-responsive embed-responsive-1by1 bg-light">

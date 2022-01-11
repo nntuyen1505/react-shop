@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { numberWithCommas } from "../../utils/numberWithCommas";
 import { useSelector, useDispatch } from "react-redux";
-import { CLOSE_MODAL } from "../../store/type";
+import { ADD_TO_CART, CLOSE_MODAL, WIDH_LIST } from "../../store/type";
 
 export function ProductModal() {
   const { openProductModal, productModal } = useSelector(
@@ -112,6 +112,9 @@ export function ProductModal() {
                         <button
                           type="submit"
                           className="btn btn-block btn-dark mb-2"
+                          onClick={() =>
+                            dispatch({ type: ADD_TO_CART, payload: { ...productModal } })
+                          }
                         >
                           Add to Cart <i className="fe fe-shopping-cart ml-2" />
                         </button>
@@ -120,7 +123,10 @@ export function ProductModal() {
                         {/* Wishlist */}
                         <button
                           className="btn btn-outline-dark btn-block mb-2"
-                          data-toggle="button"
+                          data-toggle="button"                        
+                          onClick={() =>
+                            dispatch({ type: WIDH_LIST, payload: { ...productModal } })
+                          }
                         >
                           Wishlist <i className="fe fe-heart ml-2" />
                         </button>
